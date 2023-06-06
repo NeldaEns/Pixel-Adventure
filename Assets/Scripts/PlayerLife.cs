@@ -7,6 +7,7 @@ public class PlayerLife : MonoBehaviour
 {
     private Rigidbody2D rb;
     private Animator anim;
+    [SerializeField] private AudioSource deathSoundEffect;
     private void Start()
     {
         anim = GetComponent<Animator>();
@@ -23,6 +24,7 @@ public class PlayerLife : MonoBehaviour
 
     private void Die()
     {
+        deathSoundEffect.Play();
         rb.bodyType = RigidbodyType2D.Static;
         anim.SetTrigger("death");
     }

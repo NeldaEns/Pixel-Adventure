@@ -14,6 +14,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float moveSpeed = 7f;
     [SerializeField] private float jumpForce = 14f;
 
+    [SerializeField] private AudioSource jumpSoundEffect;
+
     private enum MovementState
     {
         idle,
@@ -35,6 +37,7 @@ public class PlayerMovement : MonoBehaviour
         rb.velocity = new Vector3(dirX * moveSpeed, rb.velocity.y, 0);
          if(Input.GetButtonDown("Jump") && IsGround())
         {
+            jumpSoundEffect.Play();
             rb.velocity = new Vector3(rb.velocity.x, jumpForce, 0);
         }
         UpdateAnimationState();
