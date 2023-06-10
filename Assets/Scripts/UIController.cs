@@ -40,4 +40,6 @@ public class UIController : MonoBehaviour
         Destroy(currentScreen.gameObject);
         currentScreen = Instantiate(mainMenu, transform).GetComponent<MenuUI>();
     }
+
+    
 }
