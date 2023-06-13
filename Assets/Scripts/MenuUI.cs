@@ -7,10 +7,10 @@ using UnityEngine.SceneManagement;
 
 public class MenuUI : UIScreenBase
 {
+    public int sceneIndex;
     public void OpenLv()
     {
-        SceneManager.LoadScene(1);
-        Debug.Log(14);
+        SceneManager.LoadScene(sceneIndex);
     }
 
     public override void OnShow()
