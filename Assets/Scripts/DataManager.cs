@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class DataManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public static DataManager ins;
 
-    // Update is called once per frame
-    void Update()
+    private void Awake()
     {
-        
+        if(ins != null)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            ins = this;
+            DontDestroyOnLoad(gameObject);
+        }
     }
 }

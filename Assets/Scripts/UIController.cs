@@ -8,12 +8,13 @@ public class UIController : MonoBehaviour
     [HideInInspector]
     public UIScreenBase currentScreen;
     public GameObject mainMenu;
-    public GameObject maincameraPrefab;
+    public GameObject gamePanel;
+    public GameObject bg;
+    public GameObject mainCamera;
 
 
     private void Awake()
     {
-        GameObject mainCamera = Instantiate(maincameraPrefab);
         if(ins != null)
         {
             Destroy(gameObject);
@@ -37,9 +38,16 @@ public class UIController : MonoBehaviour
 
     public void ShowMenu()
     {
+        bg.SetActive(true);
         Destroy(currentScreen.gameObject);
         currentScreen = Instantiate(mainMenu, transform).GetComponent<MenuUI>();
     }
 
+    public void ShowGame()
+    {
+        bg.SetActive(false);
+        Destroy(currentScreen.gameObject);
+        currentScreen = Instantiate(gamePanel, transform).GetComponent<UIGame>();
+    }
     
 }

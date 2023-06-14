@@ -6,6 +6,13 @@ TagManager:
   tags:
   - Cherry
   - Trap
+  - Banana
+  - Apple
+  - Kiwi
+  - Melon
+  - Orange
+  - Pineapple
+  - Strawberry
   layers:
   - Default
   - TransparentFX

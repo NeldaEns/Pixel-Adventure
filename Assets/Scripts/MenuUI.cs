@@ -11,6 +11,7 @@ public class MenuUI : UIScreenBase
     public void OpenLv()
     {
         SceneManager.LoadScene(sceneIndex);
+        UIController.ins.ShowGame();       
     }
 
     public override void OnShow()

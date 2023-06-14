@@ -5,29 +5,26 @@ using UnityEngine.UI;
 
 public class LevelUnlockHandler : MonoBehaviour
 {
-    [SerializeField] List<Button> buttons;
-    int unlockedLevelsNumber;
+    [SerializeField] List<GameObject> levelButtons;
 
-    private void Start()
+    private void Awake()
     {
-        if (!PlayerPrefs.HasKey("levelsUnlocked"))
+        if (PlayerPrefs.GetInt("levelsUnlocked") == 0)
         {
             PlayerPrefs.SetInt("levelsUnlocked", 1);
         }
-        unlockedLevelsNumber = PlayerPrefs.GetInt("levelsUnlocker");
-
-        for (int i = 0; i < buttons.Count; i++)
-        {
-            buttons[i].interactable = false;
-        }
     }
 
-    private void Update()
+    private void Start()
     {
-        unlockedLevelsNumber = PlayerPrefs.GetInt("levelsUnlocker");
-        for (int i = 0; i < unlockedLevelsNumber; i++)
+        for(int i = 0; i < levelButtons.Count; i++)
         {
-            buttons[i].interactable = true;
+            levelButtons[i].GetComponent<Button>().interactable = false;
+        }
+
+        for(int i = 1; i <= PlayerPrefs.GetInt("levelsUnlocked"); i++)
+        {
+            levelButtons[i - 1].GetComponent<Button>().interactable = true;
         }
     }
 }
