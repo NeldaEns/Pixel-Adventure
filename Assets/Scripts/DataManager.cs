@@ -6,6 +6,11 @@ public class DataManager : MonoBehaviour
 {
     public static DataManager ins;
 
+    public int score;
+
+
+    public const string levelsUnlocked = "levelsUnlocked";
+
     private void Awake()
     {
         if(ins != null)
