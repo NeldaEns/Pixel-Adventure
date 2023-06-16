@@ -9,8 +9,10 @@ public class PlayerMovement : MonoBehaviour
     private BoxCollider2D coll;
     private SpriteRenderer sprite;
 
-    [SerializeField] private LayerMask jumpableGround;
+    private float wallSlidingSpeed = 2f;
     private float dirX = 0f;
+
+    [SerializeField] private LayerMask jumpableGround;
     [SerializeField] private float moveSpeed = 7f;
     [SerializeField] private float jumpForce = 14f;
 
@@ -76,4 +78,13 @@ public class PlayerMovement : MonoBehaviour
     {
         return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector3.down, .1f, jumpableGround);
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.CompareTag("Fan"))
+        {
+            rb.velocity = new Vector2(rb.velocity.x, 26f);
+        }
+    }
+
 }
