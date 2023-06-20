@@ -9,12 +9,12 @@ public class PlayerMovement : MonoBehaviour
     private BoxCollider2D coll;
     private SpriteRenderer sprite;
 
-    private float wallSlidingSpeed = 2f;
     private float dirX = 0f;
 
     [SerializeField] private LayerMask jumpableGround;
     [SerializeField] private float moveSpeed = 7f;
     [SerializeField] private float jumpForce = 14f;
+    [SerializeField] private float fanForce = 26f;
 
     private enum MovementState
     {
@@ -83,7 +83,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Fan"))
         {
-            rb.velocity = new Vector2(rb.velocity.x, 26f);
+            rb.velocity = new Vector2(rb.velocity.x, fanForce);
         }
     }
 

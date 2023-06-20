@@ -15,7 +15,8 @@ GameObject:
   - component: {fileID: 8748079621274118260}
   - component: {fileID: 8748079621274118258}
   - component: {fileID: 8748079621274118259}
-  m_Layer: 0
+  - component: {fileID: -8090849463311981007}
+  m_Layer: 8
   m_Name: Falling Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -122,6 +123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8da670871f4a4bb45ab6964893fbb467, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fallDelay: 1
   rb: {fileID: 0}
 --- !u!61 &8748079621274118260
 BoxCollider2D:
@@ -189,3 +191,15 @@ PlatformEffector2D:
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
+--- !u!114 &-8090849463311981007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8748079621274118261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9f7bc59d832f5e44a275ccf6f653fcf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
