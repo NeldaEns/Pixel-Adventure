@@ -10,6 +10,7 @@ public class DataManager : MonoBehaviour
 
 
     public const string levelsUnlocked = "levelsUnlocked";
+    public const string score_key = "score_key";
 
     private void Awake()
     {
@@ -22,5 +23,15 @@ public class DataManager : MonoBehaviour
             ins = this;
             DontDestroyOnLoad(gameObject);
         }
+    }
+
+    public void LoadScore()
+    {
+        score = PlayerPrefs.GetInt(score_key, 0);
+    }
+
+    public void SaveScore()
+    {
+        PlayerPrefs.SetInt(score_key, score);
     }
 }

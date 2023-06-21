@@ -6,6 +6,18 @@ using UnityEngine.SceneManagement;
 
 public class UIGame : UIScreenBase
 {
+    public Text txtScore;
+
+    private void Start()
+    {
+        UpdateScoreText();
+    }
+
+    public void UpdateScoreText()
+    {
+        txtScore.text = DataManager.ins.score.ToString();
+    }
+
     public void Back()
     {
         Hide();
@@ -16,6 +28,7 @@ public class UIGame : UIScreenBase
     public override void OnShow()
     {
         base.OnShow();
+        UpdateScoreText();
     }
 
 }

@@ -87,4 +87,15 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.CompareTag("Fruit"))
+        {
+            Destroy(collision.gameObject);
+            DataManager.ins.score += 7;
+            DataManager.ins.SaveScore();
+            ((UIGame)UIController.ins.currentScreen).UpdateScoreText();
+        }
+    }
+
 }

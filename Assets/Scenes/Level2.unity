@@ -7010,7 +7010,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ce70002734437d4192ee85869777af0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelToUnlock: 0
+  levelToUnlock: 3
 --- !u!1 &1382342032
 GameObject:
   m_ObjectHideFlags: 0
