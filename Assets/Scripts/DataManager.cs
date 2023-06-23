@@ -7,10 +7,15 @@ public class DataManager : MonoBehaviour
     public static DataManager ins;
 
     public int score;
-
+    public float currentTime;
+    public int startMinutes = 2;
 
     public const string levelsUnlocked = "levelsUnlocked";
     public const string score_key = "score_key";
+    public const string first_time_play = "first_time_play";
+    public const string time_key = "time_key";
+
+    public bool timeActive = false;
 
     private void Awake()
     {
@@ -23,6 +28,39 @@ public class DataManager : MonoBehaviour
             ins = this;
             DontDestroyOnLoad(gameObject);
         }
+        FirstTimePlay();
+    }
+
+    private void Start()
+    {
+        currentTime = startMinutes * 60;
+    }
+
+    public void FirstTimePlay()
+    {
+        if(PlayerPrefs.HasKey(first_time_play))
+        {
+            LoadDataGame();
+        }
+        else
+        {
+            PlayerPrefs.SetInt(first_time_play, 0);
+            StartDataGame();
+        }
+    }
+
+    public void LoadDataGame()
+    {
+        LoadScore();
+        LoadTime();
+    }
+
+    public void StartDataGame()
+    {
+        score = 0;
+        currentTime = 2f;
+        SaveScore();
+        SaveTime();
     }
 
     public void LoadScore()
@@ -34,4 +72,15 @@ public class DataManager : MonoBehaviour
     {
         PlayerPrefs.SetInt(score_key, score);
     }
+
+    public void LoadTime()
+    {
+        currentTime = PlayerPrefs.GetFloat(time_key, 0);
+    }
+
+    public void SaveTime()
+    {
+        PlayerPrefs.SetFloat(time_key, currentTime);
+    }
+
 }

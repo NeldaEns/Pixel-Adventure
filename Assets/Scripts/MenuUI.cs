@@ -10,6 +10,7 @@ public class MenuUI : UIScreenBase
     public int sceneIndex;
     public void OpenLv()
     {
+        DataManager.ins.timeActive = true;
         SceneManager.LoadScene(sceneIndex);
         UIController.ins.ShowGame();       
     }

@@ -16,13 +16,15 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float jumpForce = 14f;
     [SerializeField] private float fanForce = 26f;
 
-    private enum MovementState
+    public enum MovementState
     {
         idle,
         running,
         jumping, 
         falling,
     }
+
+    public MovementState currentAnim;
 
     private void Start()
     {
