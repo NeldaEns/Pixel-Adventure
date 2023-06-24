@@ -565,7 +565,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   score: 0
   currentTime: 0
-  startMinutes: 2
+  startMinutes: 3
   timeActive: 0
 --- !u!4 &2018258036
 Transform:

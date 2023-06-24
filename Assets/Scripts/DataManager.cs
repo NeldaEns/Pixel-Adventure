@@ -8,8 +8,7 @@ public class DataManager : MonoBehaviour
 
     public int score;
     public float currentTime;
-    public int startMinutes = 2;
-
+    public float maxTime = 120;
     public const string levelsUnlocked = "levelsUnlocked";
     public const string score_key = "score_key";
     public const string first_time_play = "first_time_play";
@@ -33,7 +32,7 @@ public class DataManager : MonoBehaviour
 
     private void Start()
     {
-        currentTime = startMinutes * 60;
+        currentTime = maxTime;
     }
 
     public void FirstTimePlay()
@@ -52,15 +51,12 @@ public class DataManager : MonoBehaviour
     public void LoadDataGame()
     {
         LoadScore();
-        LoadTime();
     }
 
     public void StartDataGame()
     {
         score = 0;
-        currentTime = 2f;
         SaveScore();
-        SaveTime();
     }
 
     public void LoadScore()

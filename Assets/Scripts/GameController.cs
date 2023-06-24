@@ -8,22 +8,21 @@ public class GameController : MonoBehaviour
     public static GameController ins;
 
     public PlayerLife player;
-    
+
     private void Awake()
     {
         if(ins != null)
         {
             Destroy(gameObject);
         }
-
-        else
-        {
+        else {
             ins = this;
             DontDestroyOnLoad(gameObject);
         }
+        
     }
 
-    public void Update()
+    private void Update()
     {
         CheckWinLose();
     }
@@ -32,8 +31,9 @@ public class GameController : MonoBehaviour
     {
         if(DataManager.ins.currentTime <= 0)
         {
+            DataManager.ins.timeActive = false;
             player.Die();
-          // player.RestartLevel();
+            player.RestartLevel();
         }
     }
 }

@@ -30,14 +30,9 @@ public class UIGame : UIScreenBase
         if (DataManager.ins.timeActive == true)
         {
             DataManager.ins.currentTime = DataManager.ins.currentTime - Time.deltaTime;
-            if(DataManager.ins.currentTime <= 0)
-            {
-                DataManager.ins.timeActive = false;              
-            }
-        }
-
-        TimeSpan time = TimeSpan.FromSeconds(DataManager.ins.currentTime);
-        txtCurrentTime.text = time.Minutes.ToString() + ":" + time.Seconds.ToString();
+            TimeSpan time = TimeSpan.FromSeconds(DataManager.ins.currentTime);
+            txtCurrentTime.text = time.Minutes.ToString() + ":" + time.Seconds.ToString();         
+        }       
     }
 
     public void Back()

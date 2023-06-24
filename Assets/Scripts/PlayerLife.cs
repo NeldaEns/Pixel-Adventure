@@ -23,12 +23,14 @@ public class PlayerLife : MonoBehaviour
 
     public void Die()
     {
-        rb.bodyType = RigidbodyType2D.Static;
+        rb.bodyType = RigidbodyType2D.Dynamic;
         anim.SetTrigger("death");
     }
 
-    private void RestartLevel()
+    public void RestartLevel()
     {
+        DataManager.ins.currentTime = DataManager.ins.maxTime;
+        DataManager.ins.timeActive = true;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name); 
     }
 }
