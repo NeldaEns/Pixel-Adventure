@@ -7,7 +7,8 @@ public class GameController : MonoBehaviour
 {
     public static GameController ins;
 
-    public PlayerLife player;
+    public PlayerMovement player;
+    public bool addScore;
 
     private void Awake()
     {
@@ -24,7 +25,7 @@ public class GameController : MonoBehaviour
 
     private void Update()
     {
-        CheckWinLose();
+        TimeUpdate();
     }
 
     public void CheckWinLose()
@@ -32,8 +33,32 @@ public class GameController : MonoBehaviour
         if(DataManager.ins.currentTime <= 0)
         {
             DataManager.ins.timeActive = false;
-            player.Die();
-            player.RestartLevel();
+            UIController.ins.ShowGameOver();
+            ((GameOverScreen)UIController.ins.currentScreen).ScoreGame();
         }
     }
+
+    public void TimeUpdate()
+    {
+        if (DataManager.ins.timeActive)
+        {
+            DataManager.ins.currentTime -= Time.deltaTime;
+            ((UIGame)UIController.ins.currentScreen).UpdateTimeText();
+            AddScore();
+            CheckWinLose();
+        }
+    }
+
+    public void AddScore()
+    {
+        if(addScore)
+        {
+            DataManager.ins.score += 7;
+            addScore = false;
+            DataManager.ins.SaveScore();
+            ((UIGame)UIController.ins.currentScreen).UpdateScoreText();
+        }
+
+    }
+
 }

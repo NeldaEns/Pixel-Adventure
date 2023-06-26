@@ -13,10 +13,12 @@ public class UIGame : UIScreenBase
     private void Start()
     {
         UpdateScoreText();
+        UpdateTimeText();
     }
 
     public void Update()
     {
+        UpdateScoreText();
         UpdateTimeText();       
     }
 
@@ -27,17 +29,14 @@ public class UIGame : UIScreenBase
 
     public void UpdateTimeText()
     {
-        if (DataManager.ins.timeActive == true)
-        {
-            DataManager.ins.currentTime = DataManager.ins.currentTime - Time.deltaTime;
-            TimeSpan time = TimeSpan.FromSeconds(DataManager.ins.currentTime);
-            txtCurrentTime.text = time.Minutes.ToString() + ":" + time.Seconds.ToString();         
-        }       
+        TimeSpan time = TimeSpan.FromSeconds(DataManager.ins.currentTime);
+        txtCurrentTime.text = time.Minutes.ToString() + ":" + time.Seconds.ToString();
     }
 
     public void Back()
     {
         Hide();
+        DataManager.ins.timeActive = false;
         UIController.ins.ShowMenu();
         SceneManager.LoadScene(0);
     }

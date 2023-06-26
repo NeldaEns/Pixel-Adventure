@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -87,17 +88,30 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.velocity = new Vector2(rb.velocity.x, fanForce);
         }
+        if (collision.gameObject.CompareTag("Trap"))
+        {
+            Die();
+        }
     }
 
-    //private void OnTriggerEnter2D(Collider2D collision)
-    //{
-    //    if (collision.gameObject.CompareTag("Fruit"))
-    //    {
-    //        Destroy(collision.gameObject);
-    //        DataManager.ins.score += 7;
-    //        DataManager.ins.SaveScore();
-    //        ((UIGame)UIController.ins.currentScreen).UpdateScoreText();
-    //    }
-    //}
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Fruit"))
+        {
+            GameController.ins.addScore = true;
+            Destroy(collision.gameObject);
+        }
+    }
 
+    public void Die()
+    {
+        rb.bodyType = RigidbodyType2D.Dynamic;
+        anim.SetTrigger("death");
+    }
+
+    public void RestartLevel()
+    {
+        DataManager.ins.StartDataGame();        
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
 }

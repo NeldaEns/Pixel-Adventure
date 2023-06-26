@@ -11,6 +11,8 @@ public class UIController : MonoBehaviour
     public GameObject gamePanel;
     public GameObject bg;
     public GameObject mainCamera;
+    public GameObject gameOverPanel;
+    public GameObject levelUp;
 
 
     private void Awake()
@@ -48,6 +50,20 @@ public class UIController : MonoBehaviour
         bg.SetActive(false);
         Destroy(currentScreen.gameObject);
         currentScreen = Instantiate(gamePanel, transform).GetComponent<UIGame>();
+    }
+
+    public void ShowGameOver()
+    {
+        bg.SetActive(false);
+        Destroy(currentScreen.gameObject);
+        currentScreen = Instantiate(gameOverPanel, transform).GetComponent<GameOverScreen>();
+    }
+
+    public void ShowLevelUp()
+    {
+        bg.SetActive(false);
+        Destroy(currentScreen.gameObject);
+        currentScreen = Instantiate(levelUp.transform).GetComponent<LevelUp>();
     }
     
 }

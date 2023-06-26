@@ -24,10 +24,10 @@ public class Finish : MonoBehaviour
         }
     }
 
-    private void CompleteLevel()
-    {
-        DataManager.ins.currentTime = DataManager.ins.maxTime;
-        DataManager.ins.timeActive = true;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-    }
+    //private void CompleteLevel()
+    //{
+    //    DataManager.ins.currentTime = DataManager.ins.maxTime;
+    //    DataManager.ins.timeActive = true;
+    //    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    //}
 }
