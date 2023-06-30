@@ -9,6 +9,8 @@ public class GameController : MonoBehaviour
 
     public PlayerMovement player;
     public bool addScore;
+    public bool levelComple;
+    public bool gamePlay;
 
     private void Awake()
     {
@@ -30,18 +32,28 @@ public class GameController : MonoBehaviour
 
     public void CheckWinLose()
     {
-        if(DataManager.ins.currentTime <= 0)
+        if (levelComple)
+        {
+            DataManager.ins.timeActive = false;
+            UIController.ins.ShowLevelUp();
+            ((LevelUp)UIController.ins.currentScreen).ScoreGame();
+            ((LevelUp)UIController.ins.currentScreen).TimeFinal();
+            levelComple = false;
+        }
+        if (DataManager.ins.currentTime <= 0)
         {
             DataManager.ins.timeActive = false;
             UIController.ins.ShowGameOver();
             ((GameOverScreen)UIController.ins.currentScreen).ScoreGame();
         }
+
     }
 
     public void TimeUpdate()
     {
         if (DataManager.ins.timeActive)
         {
+            gamePlay = true;
             DataManager.ins.currentTime -= Time.deltaTime;
             ((UIGame)UIController.ins.currentScreen).UpdateTimeText();
             AddScore();
@@ -51,14 +63,13 @@ public class GameController : MonoBehaviour
 
     public void AddScore()
     {
-        if(addScore)
+        if (addScore)
         {
             DataManager.ins.score += 7;
             addScore = false;
             DataManager.ins.SaveScore();
             ((UIGame)UIController.ins.currentScreen).UpdateScoreText();
         }
-
     }
 
 }

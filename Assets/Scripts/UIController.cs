@@ -12,7 +12,7 @@ public class UIController : MonoBehaviour
     public GameObject bg;
     public GameObject mainCamera;
     public GameObject gameOverPanel;
-    public GameObject levelUp;
+    public GameObject levelComplete;
 
 
     private void Awake()
@@ -63,7 +63,7 @@ public class UIController : MonoBehaviour
     {
         bg.SetActive(false);
         Destroy(currentScreen.gameObject);
-        currentScreen = Instantiate(levelUp.transform).GetComponent<LevelUp>();
+        currentScreen = Instantiate(levelComplete, transform).GetComponent<LevelUp>();
     }
     
 }

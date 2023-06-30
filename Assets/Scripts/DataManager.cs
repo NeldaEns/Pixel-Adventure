@@ -7,6 +7,7 @@ public class DataManager : MonoBehaviour
     public static DataManager ins;
 
     public int score;
+    public int numberofUnlockedLevels;
     public float currentTime;
     public float maxTime = 90f;
     public const string levelsUnlocked = "levelsUnlocked";
@@ -87,6 +88,16 @@ public class DataManager : MonoBehaviour
     public void SaveTime()
     {
         PlayerPrefs.SetFloat(time_key, currentTime);
+    }
+
+    public void LoadLevelsUnlocked()
+    {
+        numberofUnlockedLevels = PlayerPrefs.GetInt(levelsUnlocked);
+    }
+
+    public void SaveLevelsUnlocked()
+    {
+        PlayerPrefs.SetInt(levelsUnlocked, numberofUnlockedLevels + 1);
     }
 
 }

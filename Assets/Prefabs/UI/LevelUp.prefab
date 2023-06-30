@@ -225,9 +225,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8913076216293680726}
-        m_TargetAssemblyTypeName: GameOverScreen, Assembly-CSharp
-        m_MethodName: RestartGame
+      - m_Target: {fileID: 4161639744677601911}
+        m_TargetAssemblyTypeName: LevelUp, Assembly-CSharp
+        m_MethodName: LevelComplete
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -406,7 +406,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6381005077313970255}
-  - component: {fileID: 8913076216293680726}
   - component: {fileID: 4161639744677601911}
   m_Layer: 5
   m_Name: LevelUp
@@ -437,19 +436,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &8913076216293680726
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2876189329582669902}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c5112fff4ea09b4ea8a1d6308bcaf6b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scoreText: {fileID: 1172918402570703005}
 --- !u!114 &4161639744677601911
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -462,6 +448,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b9aeb0bb09bcf14ba3e35522f8e30ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scoreText: {fileID: 1172918402570703005}
+  timeText: {fileID: 6574551563966454800}
 --- !u!1 &3813961117183083858
 GameObject:
   m_ObjectHideFlags: 0
@@ -1022,8 +1010,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8913076216293680726}
-        m_TargetAssemblyTypeName: GameOverScreen, Assembly-CSharp
+      - m_Target: {fileID: 4161639744677601911}
+        m_TargetAssemblyTypeName: LevelUp, Assembly-CSharp
         m_MethodName: Menu
         m_Mode: 1
         m_Arguments:

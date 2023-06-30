@@ -14,6 +14,7 @@ public class LevelUp : UIScreenBase
     {
         base.OnShow();
         ScoreGame();
+        TimeFinal();
     }
     public void ScoreGame()
     {

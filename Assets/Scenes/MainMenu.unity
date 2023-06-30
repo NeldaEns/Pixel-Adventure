@@ -474,7 +474,8 @@ MonoBehaviour:
   mainCamera: {fileID: 86470627}
   gameOverPanel: {fileID: 2876189329582669902, guid: 022004bc47038ba4da92cbb7a6f74989,
     type: 3}
-  levelUp: {fileID: 2876189329582669902, guid: 2fedec523fb4cdf44b255f2f9b9f1f46, type: 3}
+  levelComplete: {fileID: 2876189329582669902, guid: 2fedec523fb4cdf44b255f2f9b9f1f46,
+    type: 3}
 --- !u!850595691 &1820184023
 LightingSettings:
   m_ObjectHideFlags: 0
