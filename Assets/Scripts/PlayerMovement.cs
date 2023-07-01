@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     private Animator anim;
     private BoxCollider2D coll;
     private SpriteRenderer sprite;
+    public bool doubleJump;
 
     private float dirX = 0f;
 
@@ -37,10 +38,31 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
          dirX = Input.GetAxisRaw("Horizontal");
-        rb.velocity = new Vector3(dirX * moveSpeed, rb.velocity.y, 0);
-         if(Input.GetButtonDown("Jump") && IsGround())
+        //rb.velocity = new Vector3(dirX * moveSpeed, rb.velocity.y, 0);
+        // if(Input.GetButtonDown("Jump") && IsGround())
+        //{
+        //    rb.velocity = new Vector3(rb.velocity.x, jumpForce, 0);
+        //}
+
+        rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
+        if(IsGround() && !Input.GetButton("Jump"))
         {
-            rb.velocity = new Vector3(rb.velocity.x, jumpForce, 0);
+            doubleJump = false;
+        }
+
+        if(Input.GetButtonDown("Jump"))
+        {
+            if(IsGround() || doubleJump)
+            {
+                rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+
+                doubleJump = !doubleJump;
+            }
+
+            if(Input.GetButtonUp("Jump") && rb.velocity.y > 0f)
+            {
+                rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
+            }
         }
         UpdateAnimationState();
         

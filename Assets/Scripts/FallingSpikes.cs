@@ -25,9 +25,9 @@ public class FallingSpikes : MonoBehaviour
 
             if(hit.transform != null)
             {
-                if(hit.transform.CompareTag("Player"))
+                if(hit.transform.tag == "Player")
                 {
-                    rb.gravityScale = 5;
+                    rb.gravityScale = 2;
                     isFalling = true;
                 }
             }
