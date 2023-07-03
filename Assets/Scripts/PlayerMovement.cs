@@ -118,9 +118,45 @@ public class PlayerMovement : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Fruit"))
+        if (collision.gameObject.CompareTag("Apple"))
         {
-            GameController.ins.addScore = true;
+            GameController.ins.addApple = true;
+            Destroy(collision.gameObject);
+        }
+        if (collision.gameObject.CompareTag("Banana"))
+        {
+            GameController.ins.addBanana = true;
+            Destroy(collision.gameObject);
+        }
+        if (collision.gameObject.CompareTag("Cherry"))
+        {
+            GameController.ins.addCherries = true;
+            Destroy(collision.gameObject);
+        }
+        if (collision.gameObject.CompareTag("Kiwi"))
+        {
+            GameController.ins.addKiwi = true;
+            Destroy(collision.gameObject);
+        }
+        if (collision.gameObject.CompareTag("Melon"))
+        {
+            GameController.ins.addMelon
+ = true;
+            Destroy(collision.gameObject);
+        }
+        if (collision.gameObject.CompareTag("Orange"))
+        {
+            GameController.ins.addOrange = true;
+            Destroy(collision.gameObject);
+        }
+        if (collision.gameObject.CompareTag("Pineapple"))
+        {
+            GameController.ins.addPineapple = true;
+            Destroy(collision.gameObject);
+        }
+        if (collision.gameObject.CompareTag("Strawberry"))
+        {
+            GameController.ins.addStrawberry = true;
             Destroy(collision.gameObject);
         }
     }

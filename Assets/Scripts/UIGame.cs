@@ -7,24 +7,78 @@ using System;
 
 public class UIGame : UIScreenBase
 {
-    public Text txtScore;
+    public Text txtApple;
+    public Text txtBanana;
+    public Text txtCherries;
+    public Text txtKiwi;
+    public Text txtMelon;
+    public Text txtOrange;
+    public Text txtPineapple;
+    public Text txtStrawberry;
     public Text txtCurrentTime;
 
     private void Start()
     {
-        UpdateScoreText();
+        UpdateAppleText();
+        UpdateBananaText();
+        UpdateCherriesText();
+        UpdateKiwiText();
+        UpdateMelonText();
+        UpdatePineappleText();
+        UpdateStrawberryText();
         UpdateTimeText();
     }
 
     public void Update()
     {
-        UpdateScoreText();
+        UpdateAppleText();
+        UpdateBananaText();
+        UpdateCherriesText();
+        UpdateKiwiText();
+        UpdateMelonText();
+        UpdatePineappleText();
+        UpdateStrawberryText();
         UpdateTimeText();       
     }
 
-    public void UpdateScoreText()
+    public void UpdateAppleText()
     {
-        txtScore.text = DataManager.ins.score.ToString();
+        txtApple.text = DataManager.ins.apple.ToString();
+    }
+
+    public void UpdateBananaText()
+    {
+        txtBanana.text = DataManager.ins.banana.ToString();
+    }
+
+    public void UpdateCherriesText()
+    {
+        txtCherries.text = DataManager.ins.cherries.ToString();
+    }
+
+    public void UpdateKiwiText()
+    {
+        txtKiwi.text = DataManager.ins.kiwi.ToString();
+    }
+
+    public void UpdateMelonText()
+    {
+        txtMelon.text = DataManager.ins.melon.ToString();
+    }
+
+    public void UpdateStrawberryText()
+    {
+        txtStrawberry.text = DataManager.ins.strawberry.ToString();
+    }
+
+    public void UpdatePineappleText()
+    {
+        txtPineapple.text = DataManager.ins.pineapple.ToString();
+    }
+
+    public void UpdateOrangeText()
+    {
+        txtOrange.text = DataManager.ins.orange.ToString();
     }
 
     public void UpdateTimeText()
@@ -44,7 +98,14 @@ public class UIGame : UIScreenBase
     public override void OnShow()
     {
         base.OnShow();
-        UpdateScoreText();
+        UpdateAppleText();
+        UpdateBananaText();
+        UpdateCherriesText();
+        UpdateKiwiText();
+        UpdateMelonText();
+        UpdatePineappleText();
+        UpdateStrawberryText();
+
     }
 
 }

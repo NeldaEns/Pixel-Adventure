@@ -8,6 +8,13 @@ TagManager:
   - Trap
   - Fruit
   - Fan
+  - Apple
+  - Banana
+  - Melon
+  - Orange
+  - Strawberry
+  - Pineapple
+  - Kiwi
   layers:
   - Default
   - TransparentFX

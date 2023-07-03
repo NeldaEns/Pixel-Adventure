@@ -6,12 +6,28 @@ public class DataManager : MonoBehaviour
 {
     public static DataManager ins;
 
-    public int score;
+    public int apple;
+    public int banana;
+    public int cherries;
+    public int kiwi;
+    public int melon;
+    public int orange;
+    public int pineapple;
+    public int strawberry;
     public int numberofUnlockedLevels;
+
     public float currentTime;
     public float maxTime = 90f;
+
     public const string levelsUnlocked = "levelsUnlocked";
-    public const string score_key = "score_key";
+    public const string apple_key = "apple_key";
+    public const string banana_key = "banana_key";
+    public const string kiwi_key = "kiwi_key";
+    public const string cherries_key = "cherries_key";
+    public const string melon_key = "melon_key";
+    public const string orange_key = "orange_key";
+    public const string pineapple_key = "pineapple_key";
+    public const string strawberry_key = "strawberry_key";
     public const string first_time_play = "first_time_play";
     public const string time_key = "time_key";
 
@@ -51,40 +67,129 @@ public class DataManager : MonoBehaviour
 
     public void LoadDataGame()
     {
-        LoadScore();
+        LoadApple();
+        LoadBanana();
+        LoadCherries();
+        LoadKiwi();
+        LoadMelon();
+        LoadOrange();
+        LoadStrawberry();
+        LoadPineapple();
         LoadTime();
     }
 
     public void StartDataGame()
     {
-        score = 0;
+        apple = 0;
+        banana = 0;
+        cherries = 0;
+        kiwi = 0;
+        melon = 0;
+        orange = 0;
+        pineapple = 0;
+        strawberry = 0;
         currentTime = maxTime;
         timeActive = true;
         SaveTime();
-        SaveScore();
+        SaveApple();
+        SaveBanana();
+        SaveCherries();
+        SaveKiwi();
+        SaveMelon();
+        SaveOrange();
+        SavePineapple();
+        SaveStrawberry();
     }
 
     public void ResetDataGame()
     {
-        score = 0;
+        apple = 0;
+        banana = 0;
+        cherries = 0;
+        kiwi = 0;
+        melon = 0;
+        orange = 0;
+        pineapple = 0;
+        strawberry = 0;
         currentTime = maxTime;
     }
 
-    public void LoadScore()
+    public void LoadApple()
     {
-        score = PlayerPrefs.GetInt(score_key, 0);
+        apple = PlayerPrefs.GetInt(apple_key, 0);
+    }
+    public void SaveApple()
+    {
+        PlayerPrefs.SetInt(apple_key, apple);
     }
 
-    public void SaveScore()
+    public void LoadBanana()
     {
-        PlayerPrefs.SetInt(score_key, score);
+        banana = PlayerPrefs.GetInt(banana_key, 0);
+    }
+    public void SaveBanana()
+    {
+        PlayerPrefs.SetInt(banana_key, banana);
+    }
+
+    public void LoadCherries()
+    {
+        cherries = PlayerPrefs.GetInt(cherries_key, 0);
+    }
+    public void SaveCherries()
+    {
+        PlayerPrefs.SetInt(cherries_key, cherries);
+    }
+
+    public void LoadKiwi()
+    {
+        kiwi = PlayerPrefs.GetInt(kiwi_key, 0);
+    }
+    public void SaveKiwi()
+    {
+        PlayerPrefs.SetInt(kiwi_key, kiwi);
+    }
+
+    public void LoadMelon()
+    {
+        melon = PlayerPrefs.GetInt(melon_key, 0);
+    }
+    public void SaveMelon()
+    {
+        PlayerPrefs.SetInt(melon_key, melon);
+    }
+
+    public void LoadOrange()
+    {
+        orange = PlayerPrefs.GetInt(orange_key, 0);
+    }
+    public void SaveOrange()
+    {
+        PlayerPrefs.SetInt(orange_key, orange);
+    }
+
+    public void LoadPineapple()
+    {
+        pineapple = PlayerPrefs.GetInt(pineapple_key, 0);
+    }
+    public void SavePineapple()
+    {
+        PlayerPrefs.SetInt(pineapple_key, pineapple);
+    }
+
+    public void LoadStrawberry()
+    {
+        strawberry = PlayerPrefs.GetInt(strawberry_key, 0);
+    }
+    public void SaveStrawberry()
+    {
+        PlayerPrefs.SetInt(strawberry_key, strawberry);
     }
 
     public void LoadTime()
     {
         currentTime = PlayerPrefs.GetFloat(time_key, 0);
     }
-
     public void SaveTime()
     {
         PlayerPrefs.SetFloat(time_key, currentTime);
@@ -94,7 +199,6 @@ public class DataManager : MonoBehaviour
     {
         numberofUnlockedLevels = PlayerPrefs.GetInt(levelsUnlocked);
     }
-
     public void SaveLevelsUnlocked()
     {
         PlayerPrefs.SetInt(levelsUnlocked, numberofUnlockedLevels + 1);
