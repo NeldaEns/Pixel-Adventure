@@ -474,7 +474,7 @@ MonoBehaviour:
   mainCamera: {fileID: 86470627}
   gameOverPanel: {fileID: 2876189329582669902, guid: 022004bc47038ba4da92cbb7a6f74989,
     type: 3}
-  levelComplete: {fileID: 2876189329582669902, guid: 2fedec523fb4cdf44b255f2f9b9f1f46,
+  levelComplete: {fileID: 2876189329582669902, guid: b48dfdc5642de364fa5779adb8c98517,
     type: 3}
 --- !u!850595691 &1820184023
 LightingSettings:
@@ -567,7 +567,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 858b2370aa8e50f4ea61d2c794548afb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: 0
+  apple: 0
+  banana: 0
+  cherries: 0
+  kiwi: 0
+  melon: 0
+  orange: 0
+  pineapple: 0
+  strawberry: 0
+  numberofUnlockedLevels: 0
   currentTime: 0
   maxTime: 90
   timeActive: 0

@@ -13,7 +13,7 @@ public class MenuUI : UIScreenBase
         DataManager.ins.StartDataGame();
         DataManager.ins.timeActive = true;       
         SceneManager.LoadScene(sceneIndex);
-        UIController.ins.ShowGame();       
+        UIController.ins.ShowUIGame();       
     }
 
     public override void OnShow()

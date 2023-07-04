@@ -385,9 +385,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: GameOverScreen, Assembly-CSharp
-        m_MethodName: RestartGame
+      - m_Target: {fileID: 8061373687763187503}
+        m_TargetAssemblyTypeName: LevelUp, Assembly-CSharp
+        m_MethodName: LevelComplete
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -890,15 +890,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b9aeb0bb09bcf14ba3e35522f8e30ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  txtApple: {fileID: 0}
-  txtBanana: {fileID: 0}
-  txtCherries: {fileID: 0}
-  txtKiwi: {fileID: 0}
-  txtMelon: {fileID: 0}
-  txtOrange: {fileID: 0}
-  txtPineapple: {fileID: 0}
-  txtStrawberry: {fileID: 0}
-  timeText: {fileID: 0}
+  txtApple: {fileID: 3083147007850364577}
+  txtBanana: {fileID: 5034073601512004448}
+  txtCherries: {fileID: 4075301975450164931}
+  txtKiwi: {fileID: 2679095191802672189}
+  txtMelon: {fileID: 8725489491396007021}
+  txtOrange: {fileID: 365904134952682619}
+  txtPineapple: {fileID: 8246546448216311497}
+  txtStrawberry: {fileID: 6569840135950089244}
+  timeText: {fileID: 6574551563966454800}
 --- !u!1 &3746532866918665841
 GameObject:
   m_ObjectHideFlags: 0
@@ -1092,7 +1092,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 59, y: -17}
+  m_AnchoredPosition: {x: 60, y: -17}
   m_SizeDelta: {x: 120, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7356786213787276907
@@ -1285,7 +1285,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 59, y: 94}
+  m_AnchoredPosition: {x: 60, y: 94}
   m_SizeDelta: {x: 120, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5318408932850912982
@@ -1765,7 +1765,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -209, y: 94}
+  m_AnchoredPosition: {x: -210, y: 94}
   m_SizeDelta: {x: 120, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1807685225789839541
@@ -1929,8 +1929,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: GameOverScreen, Assembly-CSharp
+      - m_Target: {fileID: 8061373687763187503}
+        m_TargetAssemblyTypeName: LevelUp, Assembly-CSharp
         m_MethodName: Menu
         m_Mode: 1
         m_Arguments:
@@ -1977,7 +1977,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -209, y: -17}
+  m_AnchoredPosition: {x: -210, y: -17}
   m_SizeDelta: {x: 120, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3952860140399487653

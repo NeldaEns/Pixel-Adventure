@@ -26,6 +26,7 @@ public class UIGame : UIScreenBase
         UpdateMelonText();
         UpdatePineappleText();
         UpdateStrawberryText();
+        UpdateOrangeText();
         UpdateTimeText();
     }
 
@@ -38,6 +39,7 @@ public class UIGame : UIScreenBase
         UpdateMelonText();
         UpdatePineappleText();
         UpdateStrawberryText();
+        UpdateOrangeText();
         UpdateTimeText();       
     }
 
@@ -105,6 +107,7 @@ public class UIGame : UIScreenBase
         UpdateMelonText();
         UpdatePineappleText();
         UpdateStrawberryText();
+        UpdateOrangeText();
 
     }
 

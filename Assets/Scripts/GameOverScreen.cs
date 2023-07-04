@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using System;
 
 public class GameOverScreen : UIScreenBase
 {
@@ -14,7 +15,8 @@ public class GameOverScreen : UIScreenBase
     public Text txtOrange;
     public Text txtPineapple;
     public Text txtStrawberry;
-    public Text txtCurrentTime;
+    public Text timeText;
+ 
 
     public override void OnShow()
     {
@@ -25,6 +27,7 @@ public class GameOverScreen : UIScreenBase
         UpdateKiwiText();
         UpdateMelonText();
         UpdatePineappleText();
+        UpdateOrangeText();
         UpdateStrawberryText();
     }
     public void UpdateAppleText()
@@ -66,12 +69,18 @@ public class GameOverScreen : UIScreenBase
     {
         txtOrange.text = DataManager.ins.orange.ToString();
     }
+    public void TimeFinal()
+    {
+        TimeSpan time = TimeSpan.FromSeconds(DataManager.ins.currentTime);
+        timeText.text = time.Minutes.ToString() + ":" + time.Seconds.ToString();
+    }
 
     public void RestartGame()
     {
-        DataManager.ins.StartDataGame();
+        DataManager.ins.ResetDataGame();
+        DataManager.ins.timeActive = true;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        UIController.ins.ShowGame();
+        UIController.ins.ShowUIGame();
     }
 
     public void Menu()

@@ -45,7 +45,7 @@ public class UIController : MonoBehaviour
         currentScreen = Instantiate(mainMenu, transform).GetComponent<MenuUI>();
     }
 
-    public void ShowGame()
+    public void ShowUIGame()
     {
         bg.SetActive(false);
         Destroy(currentScreen.gameObject);

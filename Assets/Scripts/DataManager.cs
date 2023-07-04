@@ -101,6 +101,11 @@ public class DataManager : MonoBehaviour
         SaveStrawberry();
     }
 
+    public void DataLevelUp()
+    {
+        Start();
+    }
+
     public void ResetDataGame()
     {
         apple = 0;

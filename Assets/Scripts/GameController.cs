@@ -8,6 +8,17 @@ public class GameController : MonoBehaviour
     public static GameController ins;
 
     public PlayerMovement player;
+
+
+    public GameObject[] apple;
+    public GameObject[] cherries;
+    public GameObject[] banana;
+    public GameObject[] kiwi;
+    public GameObject[] orange;
+    public GameObject[] melon;
+    public GameObject[] pineapple;
+    public GameObject[] strawberry;
+
     public bool addApple;
     public bool addBanana;
     public bool addCherries;
@@ -28,13 +39,18 @@ public class GameController : MonoBehaviour
         else {
             ins = this;
             DontDestroyOnLoad(gameObject);
-        }
-        
+        }      
     }
 
+
+    private void Start()
+    {
+        UpdateQuantityFruit();
+    }
     private void Update()
     {
         TimeUpdate();
+        UpdateQuantityFruit();
     }
 
     public void CheckWinLose()
@@ -42,17 +58,33 @@ public class GameController : MonoBehaviour
         if (levelComple)
         {
             DataManager.ins.timeActive = false;
-            UIController.ins.ShowLevelUp();
-            ((LevelUp)UIController.ins.currentScreen).UpdateAppleText();
-            ((LevelUp)UIController.ins.currentScreen).UpdateBananaText();
-            ((LevelUp)UIController.ins.currentScreen).UpdateCherriesText();
-            ((LevelUp)UIController.ins.currentScreen).UpdateKiwiText();
-            ((LevelUp)UIController.ins.currentScreen).UpdateMelonText();
-            ((LevelUp)UIController.ins.currentScreen).UpdateOrangeText();
-            ((LevelUp)UIController.ins.currentScreen).UpdatePineappleText();
-            ((LevelUp)UIController.ins.currentScreen).UpdateStrawberryText();
-            ((LevelUp)UIController.ins.currentScreen).TimeFinal();
-            levelComple = false;
+            if (apple.Length > 0 || banana.Length > 0 || cherries.Length > 0 || orange.Length > 0 || melon.Length > 0 || strawberry.Length > 0 || pineapple.Length > 0 || kiwi.Length > 0)
+            {
+                UIController.ins.ShowGameOver();
+                ((GameOverScreen)UIController.ins.currentScreen).UpdateAppleText();
+                ((GameOverScreen)UIController.ins.currentScreen).UpdateBananaText();
+                ((GameOverScreen)UIController.ins.currentScreen).UpdateCherriesText();
+                ((GameOverScreen)UIController.ins.currentScreen).UpdateKiwiText();
+                ((GameOverScreen)UIController.ins.currentScreen).UpdateMelonText();
+                ((GameOverScreen)UIController.ins.currentScreen).UpdateOrangeText();
+                ((GameOverScreen)UIController.ins.currentScreen).UpdatePineappleText();
+                ((GameOverScreen)UIController.ins.currentScreen).UpdateStrawberryText();
+                ((GameOverScreen)UIController.ins.currentScreen).TimeFinal();
+            }
+            else if (apple.Length == 0 && banana.Length == 0 && cherries.Length == 0 && kiwi.Length == 0 && orange.Length == 0 && melon.Length == 0 && pineapple.Length == 0 && strawberry.Length == 0)
+            {
+                UIController.ins.ShowLevelUp();
+                ((LevelUp)UIController.ins.currentScreen).UpdateAppleText();
+                ((LevelUp)UIController.ins.currentScreen).UpdateBananaText();
+                ((LevelUp)UIController.ins.currentScreen).UpdateCherriesText();
+                ((LevelUp)UIController.ins.currentScreen).UpdateKiwiText();
+                ((LevelUp)UIController.ins.currentScreen).UpdateMelonText();
+                ((LevelUp)UIController.ins.currentScreen).UpdateOrangeText();
+                ((LevelUp)UIController.ins.currentScreen).UpdatePineappleText();
+                ((LevelUp)UIController.ins.currentScreen).UpdateStrawberryText();
+                ((LevelUp)UIController.ins.currentScreen).TimeFinal();
+                levelComple = false;
+            }
         }
         if (DataManager.ins.currentTime <= 0)
         {
@@ -67,7 +99,7 @@ public class GameController : MonoBehaviour
             ((GameOverScreen)UIController.ins.currentScreen).UpdatePineappleText();
             ((GameOverScreen)UIController.ins.currentScreen).UpdateStrawberryText();
         }
-
+       
     }
 
     public void TimeUpdate()
@@ -142,4 +174,15 @@ public class GameController : MonoBehaviour
         }
     }
 
+    public void UpdateQuantityFruit()
+    {
+        apple = GameObject.FindGameObjectsWithTag("Apple");
+        banana = GameObject.FindGameObjectsWithTag("Banana");
+        cherries = GameObject.FindGameObjectsWithTag("Cherry");
+        kiwi = GameObject.FindGameObjectsWithTag("Kiwi");
+        orange = GameObject.FindGameObjectsWithTag("Orange");
+        melon = GameObject.FindGameObjectsWithTag("Melon");
+        pineapple = GameObject.FindGameObjectsWithTag("Pineapple");
+        strawberry = GameObject.FindGameObjectsWithTag("Strawberry");
+    }
 }

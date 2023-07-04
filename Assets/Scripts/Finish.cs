@@ -12,10 +12,14 @@ public class Finish : MonoBehaviour
         if (collision.gameObject.tag == "Player" /*&& !GameController.ins.levelComple*/)
         {
             GameController.ins.levelComple = true;
-            DataManager.ins.LoadLevelsUnlocked();
-            if(DataManager.ins.numberofUnlockedLevels <= levelToUnlock)
+            if (GameController.ins.apple.Length == 0 && GameController.ins.banana.Length == 0 && GameController.ins.cherries.Length == 0 && GameController.ins.kiwi.Length == 0
+                && GameController.ins.orange.Length == 0 && GameController.ins.melon.Length == 0 && GameController.ins.pineapple.Length == 0 && GameController.ins.strawberry.Length == 0)
             {
-                DataManager.ins.SaveLevelsUnlocked();              
+                DataManager.ins.LoadLevelsUnlocked();
+                if (DataManager.ins.numberofUnlockedLevels <= levelToUnlock)
+                {
+                    DataManager.ins.SaveLevelsUnlocked();
+                }
             }
         }
     }

@@ -27,6 +27,7 @@ public class LevelUp : UIScreenBase
         UpdateMelonText();
         UpdatePineappleText();
         UpdateStrawberryText();
+        UpdateOrangeText();
         TimeFinal();
     }
     public void UpdateAppleText()
@@ -77,9 +78,10 @@ public class LevelUp : UIScreenBase
 
     public void LevelComplete()
     {
-        DataManager.ins.StartDataGame();
+        DataManager.ins.DataLevelUp();
+        DataManager.ins.timeActive = true;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        UIController.ins.ShowGame();
+        UIController.ins.ShowUIGame();   
     }
 
     public void Menu()
