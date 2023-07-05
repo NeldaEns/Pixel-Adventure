@@ -7,6 +7,7 @@ using System;
 
 public class LevelUp : UIScreenBase
 {
+    [HideInInspector]
     public Text txtApple;
     public Text txtBanana;
     public Text txtCherries;
