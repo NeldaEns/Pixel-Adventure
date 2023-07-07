@@ -169,7 +169,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void RestartLevel()
     {
-        DataManager.ins.StartDataGame();        
+        DataManager.ins.ResetTime();        
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

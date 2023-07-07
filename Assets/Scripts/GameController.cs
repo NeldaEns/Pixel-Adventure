@@ -70,6 +70,7 @@ public class GameController : MonoBehaviour
                 ((GameOverScreen)UIController.ins.currentScreen).UpdatePineappleText();
                 ((GameOverScreen)UIController.ins.currentScreen).UpdateStrawberryText();
                 ((GameOverScreen)UIController.ins.currentScreen).TimeFinal();
+                levelComple = false;
             }
             else if (apple.Length == 0 && banana.Length == 0 && cherries.Length == 0 && kiwi.Length == 0 && orange.Length == 0 && melon.Length == 0 && pineapple.Length == 0 && strawberry.Length == 0)
             {

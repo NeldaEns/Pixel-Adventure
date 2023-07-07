@@ -101,7 +101,7 @@ public class DataManager : MonoBehaviour
         SaveStrawberry();
     }
 
-    public void DataLevelUp()
+    public void ResetTime()
     {
         Start();
     }
