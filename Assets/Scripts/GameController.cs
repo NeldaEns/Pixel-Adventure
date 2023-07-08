@@ -18,6 +18,7 @@ public class GameController : MonoBehaviour
     public GameObject[] melon;
     public GameObject[] pineapple;
     public GameObject[] strawberry;
+    public GameObject[] diamond;
 
     public bool addApple;
     public bool addBanana;
@@ -27,6 +28,7 @@ public class GameController : MonoBehaviour
     public bool addOrange;
     public bool addPineapple;
     public bool addStrawberry;
+    public bool addDiamond;
     public bool levelComple;
     public bool gamePlay;
 
@@ -69,6 +71,7 @@ public class GameController : MonoBehaviour
                 ((GameOverScreen)UIController.ins.currentScreen).UpdateOrangeText();
                 ((GameOverScreen)UIController.ins.currentScreen).UpdatePineappleText();
                 ((GameOverScreen)UIController.ins.currentScreen).UpdateStrawberryText();
+                ((GameOverScreen)UIController.ins.currentScreen).UpdateDiamondText();
                 ((GameOverScreen)UIController.ins.currentScreen).TimeFinal();
                 levelComple = false;
             }
@@ -76,13 +79,14 @@ public class GameController : MonoBehaviour
             {
                 UIController.ins.ShowLevelUp();
                 ((LevelUp)UIController.ins.currentScreen).UpdateAppleText();
-                ((LevelUp)UIController.ins.currentScreen).UpdateBananaText();
+                ((LevelUp)UIController.ins.currentScreen).UpdateBananaText();   
                 ((LevelUp)UIController.ins.currentScreen).UpdateCherriesText();
                 ((LevelUp)UIController.ins.currentScreen).UpdateKiwiText();
                 ((LevelUp)UIController.ins.currentScreen).UpdateMelonText();
                 ((LevelUp)UIController.ins.currentScreen).UpdateOrangeText();
                 ((LevelUp)UIController.ins.currentScreen).UpdatePineappleText();
                 ((LevelUp)UIController.ins.currentScreen).UpdateStrawberryText();
+                ((LevelUp)UIController.ins.currentScreen).UpdateDiamondText();
                 ((LevelUp)UIController.ins.currentScreen).TimeFinal();
                 levelComple = false;
             }
@@ -99,6 +103,7 @@ public class GameController : MonoBehaviour
             ((GameOverScreen)UIController.ins.currentScreen).UpdateOrangeText();
             ((GameOverScreen)UIController.ins.currentScreen).UpdatePineappleText();
             ((GameOverScreen)UIController.ins.currentScreen).UpdateStrawberryText();
+            ((GameOverScreen)UIController.ins.currentScreen).UpdateDiamondText();
         }
        
     }
@@ -173,6 +178,13 @@ public class GameController : MonoBehaviour
             DataManager.ins.SaveStrawberry();
             ((UIGame)UIController.ins.currentScreen).UpdateStrawberryText();
         }
+        if (addDiamond)
+        {
+            DataManager.ins.diamond += 1;
+            addDiamond = false;
+            DataManager.ins.SaveDiamond();
+            ((UIGame)UIController.ins.currentScreen).UpdateDiamondText();
+        }
     }
 
     public void UpdateQuantityFruit()
@@ -185,5 +197,6 @@ public class GameController : MonoBehaviour
         melon = GameObject.FindGameObjectsWithTag("Melon");
         pineapple = GameObject.FindGameObjectsWithTag("Pineapple");
         strawberry = GameObject.FindGameObjectsWithTag("Strawberry");
+        diamond = GameObject.FindGameObjectsWithTag("Diamond");
     }
 }

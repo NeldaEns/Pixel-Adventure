@@ -15,6 +15,7 @@ public class GameOverScreen : UIScreenBase
     public Text txtOrange;
     public Text txtPineapple;
     public Text txtStrawberry;
+    public Text txtDiamond;
     public Text timeText;
  
 
@@ -63,6 +64,11 @@ public class GameOverScreen : UIScreenBase
     public void UpdatePineappleText()
     {
         txtPineapple.text = DataManager.ins.pineapple.ToString();
+    }
+
+    public void UpdateDiamondText()
+    {
+        txtDiamond.text = DataManager.ins.diamond.ToString();
     }
 
     public void UpdateOrangeText()

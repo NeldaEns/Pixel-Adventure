@@ -16,6 +16,7 @@ public class LevelUp : UIScreenBase
     public Text txtOrange;
     public Text txtPineapple;
     public Text txtStrawberry;
+    public Text txtDiamond;
     public Text timeText;
 
     public override void OnShow()
@@ -29,6 +30,7 @@ public class LevelUp : UIScreenBase
         UpdatePineappleText();
         UpdateStrawberryText();
         UpdateOrangeText();
+        UpdateDiamondText();
         TimeFinal();
     }
     public void UpdateAppleText()
@@ -69,6 +71,11 @@ public class LevelUp : UIScreenBase
     public void UpdateOrangeText()
     {
         txtOrange.text = DataManager.ins.orange.ToString();
+    }
+
+    public void UpdateDiamondText()
+    {
+        txtDiamond.text = DataManager.ins.diamond.ToString();
     }
 
     public void TimeFinal()

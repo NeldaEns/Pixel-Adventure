@@ -14,6 +14,7 @@ public class DataManager : MonoBehaviour
     public int orange;
     public int pineapple;
     public int strawberry;
+    public int diamond;
     public int numberofUnlockedLevels;
 
     public float currentTime;
@@ -28,6 +29,7 @@ public class DataManager : MonoBehaviour
     public const string orange_key = "orange_key";
     public const string pineapple_key = "pineapple_key";
     public const string strawberry_key = "strawberry_key";
+    public const string diamond_key = "diamond_key";
     public const string first_time_play = "first_time_play";
     public const string time_key = "time_key";
 
@@ -76,6 +78,7 @@ public class DataManager : MonoBehaviour
         LoadStrawberry();
         LoadPineapple();
         LoadTime();
+        LoadDiamond();
     }
 
     public void StartDataGame()
@@ -88,6 +91,7 @@ public class DataManager : MonoBehaviour
         orange = 0;
         pineapple = 0;
         strawberry = 0;
+        diamond = 0;
         currentTime = maxTime;
         timeActive = true;
         SaveTime();
@@ -99,6 +103,7 @@ public class DataManager : MonoBehaviour
         SaveOrange();
         SavePineapple();
         SaveStrawberry();
+        SaveDiamond();
     }
 
     public void ResetTime()
@@ -189,6 +194,15 @@ public class DataManager : MonoBehaviour
     public void SaveStrawberry()
     {
         PlayerPrefs.SetInt(strawberry_key, strawberry);
+    }
+
+    public void LoadDiamond()
+    {
+        diamond = PlayerPrefs.GetInt(diamond_key, 0);
+    }
+    public void SaveDiamond()
+    {
+        PlayerPrefs.SetInt(diamond_key, diamond);
     }
 
     public void LoadTime()

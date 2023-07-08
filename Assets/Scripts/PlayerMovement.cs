@@ -159,6 +159,11 @@ public class PlayerMovement : MonoBehaviour
             GameController.ins.addStrawberry = true;
             Destroy(collision.gameObject);
         }
+        if (collision.gameObject.CompareTag("Diamond"))
+        {
+            GameController.ins.addDiamond = true;
+            Destroy(collision.gameObject);
+        }
     }
 
     public void Die()

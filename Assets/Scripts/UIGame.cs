@@ -15,6 +15,7 @@ public class UIGame : UIScreenBase
     public Text txtOrange;
     public Text txtPineapple;
     public Text txtStrawberry;
+    public Text txtDiamond;
     public Text txtCurrentTime;
 
     private void Start()
@@ -27,6 +28,7 @@ public class UIGame : UIScreenBase
         UpdatePineappleText();
         UpdateStrawberryText();
         UpdateOrangeText();
+        UpdateDiamondText();
         UpdateTimeText();
     }
 
@@ -40,6 +42,7 @@ public class UIGame : UIScreenBase
         UpdatePineappleText();
         UpdateStrawberryText();
         UpdateOrangeText();
+        UpdateDiamondText();
         UpdateTimeText();       
     }
 
@@ -83,6 +86,11 @@ public class UIGame : UIScreenBase
         txtOrange.text = DataManager.ins.orange.ToString();
     }
 
+    public void UpdateDiamondText()
+    {
+        txtDiamond.text = DataManager.ins.diamond.ToString();
+    }
+
     public void UpdateTimeText()
     {
         TimeSpan time = TimeSpan.FromSeconds(DataManager.ins.currentTime);
@@ -108,7 +116,7 @@ public class UIGame : UIScreenBase
         UpdatePineappleText();
         UpdateStrawberryText();
         UpdateOrangeText();
-
+        UpdateDiamondText();
     }
 
 }
