@@ -7,9 +7,6 @@ public class GameController : MonoBehaviour
 {
     public static GameController ins;
 
-    public PlayerMovement player;
-
-
     public GameObject[] apple;
     public GameObject[] cherries;
     public GameObject[] banana;
@@ -19,6 +16,7 @@ public class GameController : MonoBehaviour
     public GameObject[] pineapple;
     public GameObject[] strawberry;
     public GameObject[] diamond;
+
 
     public bool addApple;
     public bool addBanana;
@@ -44,11 +42,12 @@ public class GameController : MonoBehaviour
         }      
     }
 
-
     private void Start()
     {
         UpdateQuantityFruit();
     }
+
+
     private void Update()
     {
         TimeUpdate();
@@ -124,56 +123,56 @@ public class GameController : MonoBehaviour
     {
         if (addApple)
         {
-            DataManager.ins.apple += 1;
+            DataManager.ins.apple -= 1;
             addApple = false;
             DataManager.ins.SaveApple();
             ((UIGame)UIController.ins.currentScreen).UpdateAppleText();
         }
         if (addBanana)
         {
-            DataManager.ins.banana += 1;
+            DataManager.ins.banana -= 1;
             addBanana = false;
             DataManager.ins.SaveBanana();
             ((UIGame)UIController.ins.currentScreen).UpdateBananaText();
         }
         if (addCherries)
         {
-            DataManager.ins.cherries += 1;
+            DataManager.ins.cherries -= 1;
             addCherries = false;
             DataManager.ins.SaveCherries();
             ((UIGame)UIController.ins.currentScreen).UpdateCherriesText();
         }
         if (addKiwi)
         {
-            DataManager.ins.kiwi += 1;
+            DataManager.ins.kiwi -= 1;
             addKiwi = false;
             DataManager.ins.SaveKiwi();
             ((UIGame)UIController.ins.currentScreen).UpdateKiwiText();
         }
         if (addOrange)
         {
-            DataManager.ins.orange += 1;
+            DataManager.ins.orange -= 1;
             addOrange = false;
             DataManager.ins.SaveOrange();
             ((UIGame)UIController.ins.currentScreen).UpdateOrangeText();
         }
         if (addMelon)
         {
-            DataManager.ins.melon += 1;
+            DataManager.ins.melon -= 1;
             addMelon = false;
             DataManager.ins.SaveMelon();
             ((UIGame)UIController.ins.currentScreen).UpdateMelonText();
         }
         if (addPineapple)
         {
-            DataManager.ins.pineapple += 1;
+            DataManager.ins.pineapple -= 1;
             addPineapple = false;
             DataManager.ins.SavePineapple();
             ((UIGame)UIController.ins.currentScreen).UpdatePineappleText();
         }
         if (addStrawberry)
         {
-            DataManager.ins.strawberry += 1;
+            DataManager.ins.strawberry -= 1;
             addStrawberry = false;
             DataManager.ins.SaveStrawberry();
             ((UIGame)UIController.ins.currentScreen).UpdateStrawberryText();

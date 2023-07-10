@@ -83,7 +83,7 @@ public class GameOverScreen : UIScreenBase
 
     public void RestartGame()
     {
-        DataManager.ins.ResetDataGame();
+        DataManager.ins.DataGame();
         DataManager.ins.timeActive = true;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         UIController.ins.ShowUIGame();
@@ -95,6 +95,6 @@ public class GameOverScreen : UIScreenBase
         DataManager.ins.timeActive = false;
         UIController.ins.ShowMenu();
         SceneManager.LoadScene(0);
-        DataManager.ins.ResetDataGame();
+        DataManager.ins.DataGame();
     }
 }

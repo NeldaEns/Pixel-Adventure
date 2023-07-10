@@ -51,6 +51,7 @@ public class DataManager : MonoBehaviour
 
     private void Start()
     {
+
         currentTime = maxTime;
     }
 
@@ -93,7 +94,6 @@ public class DataManager : MonoBehaviour
         strawberry = 0;
         diamond = 0;
         currentTime = maxTime;
-        timeActive = true;
         SaveTime();
         SaveApple();
         SaveBanana();
@@ -108,10 +108,10 @@ public class DataManager : MonoBehaviour
 
     public void ResetTime()
     {
-        Start();
+        currentTime = maxTime;
     }
 
-    public void ResetDataGame()
+    public void DataGame()
     {
         apple = 0;
         banana = 0;
@@ -126,7 +126,7 @@ public class DataManager : MonoBehaviour
 
     public void LoadApple()
     {
-        apple = PlayerPrefs.GetInt(apple_key, 0);
+        apple = PlayerPrefs.GetInt(apple_key);
     }
     public void SaveApple()
     {
@@ -135,7 +135,7 @@ public class DataManager : MonoBehaviour
 
     public void LoadBanana()
     {
-        banana = PlayerPrefs.GetInt(banana_key, 0);
+        banana = PlayerPrefs.GetInt(banana_key);
     }
     public void SaveBanana()
     {
@@ -144,7 +144,7 @@ public class DataManager : MonoBehaviour
 
     public void LoadCherries()
     {
-        cherries = PlayerPrefs.GetInt(cherries_key, 0);
+        cherries = PlayerPrefs.GetInt(cherries_key);
     }
     public void SaveCherries()
     {
@@ -153,7 +153,7 @@ public class DataManager : MonoBehaviour
 
     public void LoadKiwi()
     {
-        kiwi = PlayerPrefs.GetInt(kiwi_key, 0);
+        kiwi = PlayerPrefs.GetInt(kiwi_key);
     }
     public void SaveKiwi()
     {
@@ -162,7 +162,7 @@ public class DataManager : MonoBehaviour
 
     public void LoadMelon()
     {
-        melon = PlayerPrefs.GetInt(melon_key, 0);
+        melon = PlayerPrefs.GetInt(melon_key);
     }
     public void SaveMelon()
     {
@@ -171,7 +171,7 @@ public class DataManager : MonoBehaviour
 
     public void LoadOrange()
     {
-        orange = PlayerPrefs.GetInt(orange_key, 0);
+        orange = PlayerPrefs.GetInt(orange_key);
     }
     public void SaveOrange()
     {
@@ -180,7 +180,7 @@ public class DataManager : MonoBehaviour
 
     public void LoadPineapple()
     {
-        pineapple = PlayerPrefs.GetInt(pineapple_key, 0);
+        pineapple = PlayerPrefs.GetInt(pineapple_key);
     }
     public void SavePineapple()
     {
@@ -189,7 +189,7 @@ public class DataManager : MonoBehaviour
 
     public void LoadStrawberry()
     {
-        strawberry = PlayerPrefs.GetInt(strawberry_key, 0);
+        strawberry = PlayerPrefs.GetInt(strawberry_key);
     }
     public void SaveStrawberry()
     {
@@ -198,7 +198,7 @@ public class DataManager : MonoBehaviour
 
     public void LoadDiamond()
     {
-        diamond = PlayerPrefs.GetInt(diamond_key, 0);
+        diamond = PlayerPrefs.GetInt(diamond_key);
     }
     public void SaveDiamond()
     {

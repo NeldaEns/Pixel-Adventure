@@ -575,6 +575,7 @@ MonoBehaviour:
   orange: 0
   pineapple: 0
   strawberry: 0
+  diamond: 0
   numberofUnlockedLevels: 0
   currentTime: 0
   maxTime: 90

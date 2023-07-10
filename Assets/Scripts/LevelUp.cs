@@ -86,7 +86,7 @@ public class LevelUp : UIScreenBase
 
     public void LevelComplete()
     {
-        DataManager.ins.ResetTime();
+        DataManager.ins.DataGame();
         DataManager.ins.timeActive = true;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         UIController.ins.ShowUIGame();   
@@ -98,6 +98,6 @@ public class LevelUp : UIScreenBase
         DataManager.ins.timeActive = false;
         UIController.ins.ShowMenu();
         SceneManager.LoadScene(0);
-        DataManager.ins.ResetDataGame();
+        DataManager.ins.DataGame();
     }
 }
