@@ -29,6 +29,9 @@ public class GameController : MonoBehaviour
     public bool addDiamond;
     public bool levelComple;
     public bool gamePlay;
+    public bool moveLeft;
+    public bool moveRight;
+    public bool doubleJump;
 
     private void Awake()
     {
@@ -104,7 +107,6 @@ public class GameController : MonoBehaviour
             ((GameOverScreen)UIController.ins.currentScreen).UpdateStrawberryText();
             ((GameOverScreen)UIController.ins.currentScreen).UpdateDiamondText();
         }
-       
     }
 
     public void TimeUpdate()

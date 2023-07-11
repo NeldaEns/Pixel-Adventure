@@ -16,6 +16,7 @@ public class DataManager : MonoBehaviour
     public int strawberry;
     public int diamond;
     public int numberofUnlockedLevels;
+    public int health = 3;
 
     public float currentTime;
     public float maxTime = 90f;
@@ -106,13 +107,9 @@ public class DataManager : MonoBehaviour
         SaveDiamond();
     }
 
-    public void ResetTime()
-    {
-        currentTime = maxTime;
-    }
-
     public void DataGame()
     {
+        health = 3;
         apple = 0;
         banana = 0;
         cherries = 0;

@@ -2619,7 +2619,7 @@ GameObject:
   - component: {fileID: 791258782}
   m_Layer: 8
   m_Name: Terrain
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -33416,7 +33416,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae9a654825dcc064da0d9d38a9d47871, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 2145148955}
   apple: []
   cherries: []
   banana: []
@@ -33425,6 +33424,7 @@ MonoBehaviour:
   melon: []
   pineapple: []
   strawberry: []
+  diamond: []
   addApple: 0
   addBanana: 0
   addCherries: 0
@@ -33433,8 +33433,12 @@ MonoBehaviour:
   addOrange: 0
   addPineapple: 0
   addStrawberry: 0
+  addDiamond: 0
   levelComple: 0
   gamePlay: 0
+  moveLeft: 0
+  moveRight: 0
+  jump: 0
 --- !u!4 &1387798060
 Transform:
   m_ObjectHideFlags: 0
@@ -35472,18 +35476,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2145148953}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2145148955 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2809243169640852229, guid: 459c8b8505f098d42895f4e49be8ccfd,
-    type: 3}
-  m_PrefabInstance: {fileID: 2145148953}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f2bc430e7b3d794da9185b701351400, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &4272272476601510773
 PrefabInstance:
   m_ObjectHideFlags: 0

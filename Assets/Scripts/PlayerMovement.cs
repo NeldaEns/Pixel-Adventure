@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -9,9 +10,10 @@ public class PlayerMovement : MonoBehaviour
     private Animator anim;
     private BoxCollider2D coll;
     private SpriteRenderer sprite;
-    public bool doubleJump;
+    bool isGrounded;
 
-    private float dirX = 0f;
+    private float dirX;
+    public float delayBeforeDoubleJump;
 
     [SerializeField] private LayerMask jumpableGround;
     [SerializeField] private float moveSpeed = 7f;
@@ -22,7 +24,7 @@ public class PlayerMovement : MonoBehaviour
     {
         idle,
         running,
-        jumping, 
+        jumping,
         falling,
     }
 
@@ -35,39 +37,42 @@ public class PlayerMovement : MonoBehaviour
         sprite = GetComponent<SpriteRenderer>();
         coll = GetComponent<BoxCollider2D>();
     }
+    //private void Update()
+    //{
+    //    dirX = Input.GetAxisRaw("Horizontal");
+
+    //    rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
+    //    if (IsGround() && !Input.GetButton("Jump"))
+    //    {
+    //        doubleJump = false;
+    //    }
+
+    //    if (Input.GetButtonDown("Jump"))
+    //    {
+    //        if (IsGround() || doubleJump)
+    //        {
+    //            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+
+    //            doubleJump = !doubleJump;
+    //        }
+
+    //        if (Input.GetButtonUp("Jump") && rb.velocity.y > 0f)
+    //        {
+    //            rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
+    //        }
+    //    }
+    //    UpdateAnimationState();
+    //}
+
     private void Update()
     {
-         dirX = Input.GetAxisRaw("Horizontal");
-        //rb.velocity = new Vector3(dirX * moveSpeed, rb.velocity.y, 0);
-        // if(Input.GetButtonDown("Jump") && IsGround())
-        //{
-        //    rb.velocity = new Vector3(rb.velocity.x, jumpForce, 0);
-        //}
-
-        rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
-        if(IsGround() && !Input.GetButton("Jump"))
-        {
-            doubleJump = false;
-        }
-
-        if(Input.GetButtonDown("Jump"))
-        {
-            if(IsGround() || doubleJump)
-            {
-                rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-
-                doubleJump = !doubleJump;
-            }
-
-            if(Input.GetButtonUp("Jump") && rb.velocity.y > 0f)
-            {
-                rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
-            }
-        }
+        MovePLayer();
         UpdateAnimationState();
-        
     }
-
+    private void FixedUpdate()
+    {
+        rb.velocity = new Vector2(dirX, rb.velocity.y);
+    }
     private void UpdateAnimationState()
     {
         MovementState state;
@@ -99,20 +104,34 @@ public class PlayerMovement : MonoBehaviour
         anim.SetInteger("state", (int)state);
     }
 
-    private bool IsGround()
-    {
-        return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector3.down, .1f, jumpableGround);
-    }
+    //private bool IsGround()
+    //{
+    //    return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector3.down, .1f, jumpableGround);
+    //}
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.CompareTag("Fan"))
+        if (collision.gameObject.CompareTag("Fan"))
         {
             rb.velocity = new Vector2(rb.velocity.x, fanForce);
         }
         if (collision.gameObject.CompareTag("Trap"))
         {
-            Die();
+            DataManager.ins.health--;
+            if (DataManager.ins.health <= 0)
+            {
+                Die();
+            }
+            else
+            {
+                StartCoroutine(GetHurt());
+            }
+        }
+
+        if(collision.gameObject.tag == "Ground")
+        {
+            isGrounded = true;
+            GameController.ins.doubleJump = false;
         }
     }
 
@@ -174,7 +193,74 @@ public class PlayerMovement : MonoBehaviour
 
     public void RestartLevel()
     {
-        DataManager.ins.DataGame();        
+        DataManager.ins.DataGame();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    IEnumerator GetHurt()
+    {
+        Physics2D.IgnoreLayerCollision(6, 7);
+        GetComponent<Animator>().SetLayerWeight(1, 1);
+        yield return new WaitForSeconds(2);
+        GetComponent<Animator>().SetLayerWeight(1, 0);
+        Physics2D.IgnoreLayerCollision(6, 7, false);
+    }
+
+    public void PointerDownLeft()
+    {
+        GameController.ins.moveLeft = true;
+    }
+
+    public void PointerUpLeft()
+    {
+        GameController.ins.moveLeft = false;
+    }
+
+    public void PointDownRight()
+    {
+        GameController.ins.moveRight = true;
+    }
+
+    public void PointUpRight()
+    {
+        GameController.ins.moveRight = false;
+    }
+
+    public void MovePLayer()
+    {
+        if (GameController.ins.moveLeft)
+        {
+            dirX = -moveSpeed;
+        }
+        else if (GameController.ins.moveRight)
+        {
+            dirX = moveSpeed;
+        }
+        else
+        {
+            dirX = 0;
+        }
+    }
+
+    public void JumpButton()
+    {
+        if(isGrounded)
+        {
+            Debug.Log(244);
+            isGrounded = false;
+            rb.velocity = Vector2.up * jumpForce;
+            Invoke("EnableDoubleJump", delayBeforeDoubleJump); 
+        }
+
+        if(GameController.ins.doubleJump)
+        {
+            rb.velocity = Vector2.up * jumpForce;
+            GameController.ins.doubleJump = false;
+        }
+    }
+
+    void EnableDoubleJump()
+    {
+        GameController.ins.doubleJump = true;
     }
 }

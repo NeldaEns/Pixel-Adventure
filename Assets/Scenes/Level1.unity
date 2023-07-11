@@ -1869,6 +1869,9 @@ MonoBehaviour:
   addDiamond: 0
   levelComple: 0
   gamePlay: 0
+  moveLeft: 0
+  moveRight: 0
+  jump: 0
 --- !u!4 &712798829
 Transform:
   m_ObjectHideFlags: 0
@@ -2034,7 +2037,7 @@ GameObject:
   - component: {fileID: 791258782}
   m_Layer: 8
   m_Name: Terrain
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

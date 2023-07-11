@@ -47,7 +47,7 @@ GameObject:
   - component: {fileID: 3365729118742658631}
   - component: {fileID: 3365729118742658624}
   - component: {fileID: 3365729118742658626}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Rock Head
   m_TagString: Trap
   m_Icon: {fileID: 0}

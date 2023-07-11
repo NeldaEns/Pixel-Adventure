@@ -30,6 +30,7 @@ public class GameOverScreen : UIScreenBase
         UpdatePineappleText();
         UpdateOrangeText();
         UpdateStrawberryText();
+        TimeFinal();
     }
     public void UpdateAppleText()
     {

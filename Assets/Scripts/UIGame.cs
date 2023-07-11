@@ -18,6 +18,10 @@ public class UIGame : UIScreenBase
     public Text txtDiamond;
     public Text txtCurrentTime;
 
+    public Image[] hearts;
+    public Sprite fullHeart;
+    public Sprite emmtyHeart;
+
     private void Start()
     {
         UpdateAppleText();
@@ -30,6 +34,7 @@ public class UIGame : UIScreenBase
         UpdateOrangeText();
         UpdateDiamondText();
         UpdateTimeText();
+        UpdateHeart();
     }
 
     public void Update()
@@ -43,7 +48,8 @@ public class UIGame : UIScreenBase
         UpdateStrawberryText();
         UpdateOrangeText();
         UpdateDiamondText();
-        UpdateTimeText();       
+        UpdateTimeText();
+        UpdateHeart();
     }
 
     public void UpdateAppleText()
@@ -97,6 +103,18 @@ public class UIGame : UIScreenBase
         txtCurrentTime.text = time.Minutes.ToString() + ":" + time.Seconds.ToString();
     }
 
+    public void UpdateHeart()
+    {
+        foreach(Image img in hearts)
+        {
+            img.sprite = emmtyHeart;
+        }
+        for(int i = 0; i < DataManager.ins.health; i++)
+        {
+            hearts[i].sprite = fullHeart;
+        }
+    }
+
     public void Back()
     {
         Hide();
@@ -117,6 +135,7 @@ public class UIGame : UIScreenBase
         UpdateStrawberryText();
         UpdateOrangeText();
         UpdateDiamondText();
+        UpdateHeart();
     }
 
 }
