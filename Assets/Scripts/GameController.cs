@@ -31,6 +31,7 @@ public class GameController : MonoBehaviour
     public bool gamePlay;
     public bool moveLeft;
     public bool moveRight;
+    public bool isGrounded;
     public bool doubleJump;
 
     private void Awake()

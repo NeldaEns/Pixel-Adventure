@@ -1871,7 +1871,7 @@ MonoBehaviour:
   gamePlay: 0
   moveLeft: 0
   moveRight: 0
-  jump: 0
+  doubleJump: 0
 --- !u!4 &712798829
 Transform:
   m_ObjectHideFlags: 0
