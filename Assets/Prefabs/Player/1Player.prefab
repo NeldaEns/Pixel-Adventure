@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 2809243169640852228}
   m_Layer: 6
   m_Name: 1Player
-  m_TagString: Player
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -149,6 +149,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 2809243169640852225}
+  coll: {fileID: 2809243169640852230}
   delayBeforeDoubleJump: 1
   jumpableGround:
     serializedVersion: 2

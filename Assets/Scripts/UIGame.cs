@@ -138,4 +138,19 @@ public class UIGame : UIScreenBase
         UpdateHeart();
     }
 
+    public void OnButtonJumpClick()
+    {
+        GameController.ins.PlayerJump();
+    }
+
+    public void OnButtonLeft()
+    {
+        GameController.ins.PlayerLeft();
+    }
+
+
+    public void OnButtonRight()
+    {
+        GameController.ins.PlayerRight();
+    }
 }

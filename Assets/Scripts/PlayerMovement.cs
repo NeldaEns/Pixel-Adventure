@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField]private Rigidbody2D rb;
     private Animator anim;
-    private BoxCollider2D coll;
+    [SerializeField] private BoxCollider2D coll;
     private SpriteRenderer sprite;
 
     private float dirX;
@@ -39,7 +39,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        MovePLayer();
         //if (IsGround() && !Input.GetButton("Jump"))
         //{
         //    GameController.ins.doubleJump = false;
@@ -61,11 +60,7 @@ public class PlayerMovement : MonoBehaviour
         //}
         UpdateAnimationState();
     }
-    private void FixedUpdate()
-    {
-        rb.velocity = new Vector2(dirX, rb.velocity.y);
-    }
-    private void UpdateAnimationState()
+    public void UpdateAnimationState()
     {
         MovementState state;
         if (dirX > 0f)
@@ -96,10 +91,10 @@ public class PlayerMovement : MonoBehaviour
         anim.SetInteger("state", (int)state);
     }
 
-    //private bool IsGround()
-    //{
-    //    return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector3.down, .1f, jumpableGround);
-    //}
+    private bool IsGround()
+    {
+        return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector3.down, .1f, jumpableGround);
+    }
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
@@ -198,58 +193,31 @@ public class PlayerMovement : MonoBehaviour
         Physics2D.IgnoreLayerCollision(6, 7, false);
     }
 
-    public void PointerDownLeft()
-    {
-        GameController.ins.moveLeft = true;
-    }
-
-    public void PointerUpLeft()
-    {
-        GameController.ins.moveLeft = false;
-    }
-
-    public void PointDownRight()
-    {
-        GameController.ins.moveRight = true;
-    }
-
-    public void PointUpRight()
-    {
-        GameController.ins.moveRight = false;
-    }
-
-    public void MovePLayer()
-    {
-        if (GameController.ins.moveLeft)
-        {
-            dirX = -moveSpeed;
-        }
-        else if (GameController.ins.moveRight)
-        {
-            dirX = moveSpeed;
-        }
-        else
-        {
-            dirX = 0;
-        }
-    }
-
     public void JumpButton()
     {
         if (GameController.ins.isGrounded)
-        {
+        {        
             GameController.ins.isGrounded = false;
-            //rb.velocity = Vector2.up * jumpForce;           
-            //rb.AddForce(Vector2.up * jumpForce);
-            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-            Debug.Log(rb.velocity.y);
-            //Invoke("EnableDoubleJump", delayBeforeDoubleJump);
+            rb.velocity = Vector2.up * jumpForce;           
+           Invoke("EnableDoubleJump", delayBeforeDoubleJump);
         }
-        //if (GameController.ins.doubleJump)
-        //{
-        //    rb.velocity = Vector2.up * jumpForce;
-        //    GameController.ins.doubleJump = false;
-        //}
+        if (GameController.ins.doubleJump)
+        {
+            rb.velocity = Vector2.up * jumpForce;
+            GameController.ins.doubleJump = false;
+        }
+    }
+
+    public void LeftButton()
+    {
+        dirX = -moveSpeed;
+        rb.velocity = new Vector2(dirX, rb.velocity.y);
+    }
+
+    public void RightButton()
+    {
+        dirX = moveSpeed;
+        rb.velocity = new Vector2(dirX, rb.velocity.y);
     }
 
     void EnableDoubleJump()

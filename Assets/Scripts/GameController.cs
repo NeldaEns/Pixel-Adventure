@@ -34,6 +34,8 @@ public class GameController : MonoBehaviour
     public bool isGrounded;
     public bool doubleJump;
 
+    public PlayerMovement player;
+
     private void Awake()
     {
         if(ins != null)
@@ -56,6 +58,7 @@ public class GameController : MonoBehaviour
     {
         TimeUpdate();
         UpdateQuantityFruit();
+        player = FindObjectOfType<PlayerMovement>();
     }
 
     public void CheckWinLose()
@@ -200,5 +203,20 @@ public class GameController : MonoBehaviour
         pineapple = GameObject.FindGameObjectsWithTag("Pineapple");
         strawberry = GameObject.FindGameObjectsWithTag("Strawberry");
         diamond = GameObject.FindGameObjectsWithTag("Diamond");
+    }
+
+    public void PlayerJump()
+    {
+        player.JumpButton();
+    }
+
+    public void PlayerLeft()
+    {
+        player.LeftButton();
+    }
+
+    public void PlayerRight()
+    {
+        player.RightButton();
     }
 }
