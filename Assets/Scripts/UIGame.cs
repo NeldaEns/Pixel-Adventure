@@ -143,14 +143,23 @@ public class UIGame : UIScreenBase
         GameController.ins.PlayerJump();
     }
 
-    public void OnButtonLeft()
+    public void PointDownLeftButton()
     {
-        GameController.ins.PlayerLeft();
+        GameController.ins.moveLeft = true;
     }
 
-
-    public void OnButtonRight()
+    public void PointUpLeftButton()
     {
-        GameController.ins.PlayerRight();
+        GameController.ins.moveLeft = false;
+    }
+
+    public void PointDownRightButton()
+    {
+        GameController.ins.moveRight = true;
+    }
+
+    public void PointUpRightButton()
+    {
+        GameController.ins.moveRight = false;
     }
 }

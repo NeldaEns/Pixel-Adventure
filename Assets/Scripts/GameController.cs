@@ -210,13 +210,4 @@ public class GameController : MonoBehaviour
         player.JumpButton();
     }
 
-    public void PlayerLeft()
-    {
-        player.LeftButton();
-    }
-
-    public void PlayerRight()
-    {
-        player.RightButton();
-    }
 }

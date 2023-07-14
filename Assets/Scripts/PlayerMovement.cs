@@ -39,26 +39,34 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        //if (IsGround() && !Input.GetButton("Jump"))
-        //{
-        //    GameController.ins.doubleJump = false;
-        //}
+        //MovePlayer();
 
-        //if (Input.GetButtonDown("Jump"))
-        //{
-        //    if (IsGround() || GameController.ins.doubleJump)
-        //    {
-        //        rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+        dirX = Input.GetAxisRaw("Horizontal") * moveSpeed;
+        if (IsGround() && !Input.GetButton("Jump"))
+        {
+            GameController.ins.doubleJump = false;
+        }
 
-        //        GameController.ins.doubleJump = !GameController.ins.doubleJump;
-        //    }
+        if (Input.GetButtonDown("Jump"))
+        {
+            if (IsGround() || GameController.ins.doubleJump)
+            {
+                rb.velocity = new Vector2(rb.velocity.x, jumpForce);
 
-        //    if (Input.GetButtonUp("Jump") && rb.velocity.y > 0f)
-        //    {
-        //        rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
-        //    }
-        //}
+                GameController.ins.doubleJump = !GameController.ins.doubleJump;
+            }
+
+            if (Input.GetButtonUp("Jump") && rb.velocity.y > 0f)
+            {
+                rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
+            }
+        }
         UpdateAnimationState();
+    }
+
+    private void FixedUpdate()
+    {
+        rb.velocity = new Vector2(dirX, rb.velocity.y);
     }
     public void UpdateAnimationState()
     {
@@ -206,22 +214,28 @@ public class PlayerMovement : MonoBehaviour
             rb.velocity = Vector2.up * jumpForce;
             GameController.ins.doubleJump = false;
         }
-    }
-
-    public void LeftButton()
-    {
-        dirX = -moveSpeed;
-        rb.velocity = new Vector2(dirX, rb.velocity.y);
-    }
-
-    public void RightButton()
-    {
-        dirX = moveSpeed;
-        rb.velocity = new Vector2(dirX, rb.velocity.y);
-    }
+    }   
 
     void EnableDoubleJump()
     {
         GameController.ins.doubleJump = true;
+    }
+
+    void MovePlayer()
+    {
+        if(GameController.ins.moveLeft)
+        {
+            dirX = -moveSpeed;
+        }
+
+        else if(GameController.ins.moveRight)
+        {
+            dirX = moveSpeed;
+        }
+
+        else
+        {
+            dirX = 0;
+        }
     }
 }

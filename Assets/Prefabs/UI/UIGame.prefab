@@ -863,6 +863,7 @@ GameObject:
   - component: {fileID: 7086190094358084936}
   - component: {fileID: 1480567555414898951}
   - component: {fileID: 4456070371766533675}
+  - component: {fileID: 3026149518364506151}
   m_Layer: 5
   m_Name: Right
   m_TagString: Untagged
@@ -972,19 +973,52 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1480567555414898951}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1806229612852295363}
-        m_TargetAssemblyTypeName: UIGame, Assembly-CSharp
-        m_MethodName: OnButtonRight
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
+--- !u!114 &3026149518364506151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3580588856179297177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1806229612852295363}
+          m_TargetAssemblyTypeName: UIGame, Assembly-CSharp
+          m_MethodName: PointDownRightButton
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1806229612852295363}
+          m_TargetAssemblyTypeName: UIGame, Assembly-CSharp
+          m_MethodName: PointUpRightButton
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &3614270091762601614
 GameObject:
   m_ObjectHideFlags: 0
@@ -2180,6 +2214,7 @@ GameObject:
   - component: {fileID: 5425147335451757929}
   - component: {fileID: 7451494841125561805}
   - component: {fileID: 1029835297220073498}
+  - component: {fileID: 1612294438140347557}
   m_Layer: 5
   m_Name: Left
   m_TagString: Untagged
@@ -2289,19 +2324,52 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7451494841125561805}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1806229612852295363}
-        m_TargetAssemblyTypeName: UIGame, Assembly-CSharp
-        m_MethodName: OnButtonLeft
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
+--- !u!114 &1612294438140347557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6676371476291683775}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1806229612852295363}
+          m_TargetAssemblyTypeName: UIGame, Assembly-CSharp
+          m_MethodName: PointDownLeftButton
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1806229612852295363}
+          m_TargetAssemblyTypeName: UIGame, Assembly-CSharp
+          m_MethodName: PointUpLeftButton
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &7078307221948078225
 GameObject:
   m_ObjectHideFlags: 0
@@ -2830,6 +2898,7 @@ GameObject:
   - component: {fileID: 5862844374466364058}
   - component: {fileID: 4996469088863901239}
   - component: {fileID: 5555387389630352270}
+  - component: {fileID: 2491611931205849159}
   m_Layer: 5
   m_Name: Jump
   m_TagString: Untagged
@@ -2939,19 +3008,36 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4996469088863901239}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1806229612852295363}
-        m_TargetAssemblyTypeName: UIGame, Assembly-CSharp
-        m_MethodName: OnButtonJumpClick
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
+--- !u!114 &2491611931205849159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8830819743095706495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1806229612852295363}
+          m_TargetAssemblyTypeName: UIGame, Assembly-CSharp
+          m_MethodName: OnButtonJumpClick
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &9113662095559055620
 GameObject:
   m_ObjectHideFlags: 0
