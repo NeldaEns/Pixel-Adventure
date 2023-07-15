@@ -105,7 +105,7 @@ public class DataManager : MonoBehaviour
         SavePineapple();
         SaveStrawberry();
         SaveDiamond();
-    }
+    }   
 
     public void DataGame()
     {

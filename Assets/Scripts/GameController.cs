@@ -17,16 +17,8 @@ public class GameController : MonoBehaviour
     public GameObject[] strawberry;
     public GameObject[] diamond;
 
-
-    public bool addApple;
-    public bool addBanana;
-    public bool addCherries;
-    public bool addKiwi;
-    public bool addMelon;
-    public bool addOrange;
-    public bool addPineapple;
-    public bool addStrawberry;
-    public bool addDiamond;
+    [HideInInspector]
+    public bool addApple, addBanana, addCherries, addKiwi, addMelon, addOrange, addPineapple, addStrawberry, addDiamond;
     public bool levelComple;
     public bool gamePlay;
     public bool moveLeft;
@@ -42,7 +34,8 @@ public class GameController : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        else {
+        else
+        {
             ins = this;
             DontDestroyOnLoad(gameObject);
         }      
@@ -51,6 +44,7 @@ public class GameController : MonoBehaviour
     private void Start()
     {
         UpdateQuantityFruit();
+        player = FindObjectOfType<PlayerMovement>();
     }
 
 
@@ -58,7 +52,6 @@ public class GameController : MonoBehaviour
     {
         TimeUpdate();
         UpdateQuantityFruit();
-        player = FindObjectOfType<PlayerMovement>();
     }
 
     public void CheckWinLose()
