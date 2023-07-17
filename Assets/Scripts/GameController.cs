@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class GameController : MonoBehaviour
 {
     public static GameController ins;
+    public GameObject startPoint;
 
     public GameObject[] apple;
     public GameObject[] cherries;
@@ -26,7 +27,9 @@ public class GameController : MonoBehaviour
     public bool isGrounded;
     public bool doubleJump;
 
-    public PlayerMovement player;
+    public Transform[] playerPrefabs;
+
+    public int characterIndex;
 
     private void Awake()
     {
@@ -38,13 +41,14 @@ public class GameController : MonoBehaviour
         {
             ins = this;
             DontDestroyOnLoad(gameObject);
-        }      
+        }
+        characterIndex = PlayerPrefs.GetInt("SelectedCharacter", 0);
     }
 
     private void Start()
     {
         UpdateQuantityFruit();
-        player = FindObjectOfType<PlayerMovement>();
+        Instantiate(playerPrefabs[characterIndex], startPoint.transform.position, Quaternion.identity);
     }
 
 
@@ -200,7 +204,7 @@ public class GameController : MonoBehaviour
 
     public void PlayerJump()
     {
-        player.JumpButton();
+        playerPrefabs[characterIndex].GetComponent<PlayerMovement>().JumpButton();
     }
 
 }

@@ -117,10 +117,7 @@ public class UIGame : UIScreenBase
 
     public void Back()
     {
-        Hide();
         DataManager.ins.timeActive = false;
-        UIController.ins.ShowMenu();
-        SceneManager.LoadScene(0);
     }
 
     public override void OnShow()
@@ -161,5 +158,26 @@ public class UIGame : UIScreenBase
     public void PointUpRightButton()
     {
         GameController.ins.moveRight = false;
+
+    }
+
+    public void Continue()
+    {
+        DataManager.ins.timeActive = true;
+    }
+
+    public void Restart()
+    {
+        DataManager.ins.DataGame();
+        DataManager.ins.timeActive = true;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void Menu()
+    {
+        Hide();
+        DataManager.ins.timeActive = false;
+        SceneManager.LoadScene(0);
+        UIController.ins.ShowMenu();
     }
 }

@@ -118630,6 +118630,7 @@ MonoBehaviour:
   pineapple: []
   strawberry: []
   diamond: []
+  playerPrefabs: []
   addApple: 0
   addBanana: 0
   addCherries: 0
@@ -118646,6 +118647,7 @@ MonoBehaviour:
   isGrounded: 0
   doubleJump: 0
   player: {fileID: 2145148956}
+  characterIndex: 0
 --- !u!4 &1520512035
 Transform:
   m_ObjectHideFlags: 0
@@ -124166,7 +124168,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1769687109}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.50707, y: 3.6534033, z: -18.8607}
+  m_LocalPosition: {x: 46.97, y: 23.8, z: -18.8607}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

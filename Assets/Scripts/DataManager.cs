@@ -16,10 +16,10 @@ public class DataManager : MonoBehaviour
     public int strawberry;
     public int diamond;
     public int numberofUnlockedLevels;
-    public int health = 3;
+    public int health ;
 
     public float currentTime;
-    public float maxTime = 90f;
+    public float maxTime ;
 
     public const string levelsUnlocked = "levelsUnlocked";
     public const string apple_key = "apple_key";
