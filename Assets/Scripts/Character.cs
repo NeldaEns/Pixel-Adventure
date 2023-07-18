@@ -1,18 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+[System.Serializable]
 
-public class Character : MonoBehaviour
+public class Character
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public string name;
+    public int price;
+    public int maxTime;
+    public int health;
+    public bool isUnlocked;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

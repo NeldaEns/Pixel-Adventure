@@ -6,6 +6,7 @@ public class CharacterSelect : MonoBehaviour
 {
     public GameObject[] skins;
     public int selectedCharacter;
+    public Character[] characters;
 
     private void Awake()
     {
@@ -16,19 +17,30 @@ public class CharacterSelect : MonoBehaviour
 
             skins[selectedCharacter].SetActive(true);
         }
+
+        foreach(Character c in characters)
+        {
+            if(c.price == 0)
+            {
+                c.isUnlocked = true;
+            }
+            else
+            {
+                c.isUnlocked = PlayerPrefs.GetInt(c.name, 0) == 0 ? false : true;
+            }
+        }
     }
 
     public void ChangeNext()
     {
         skins[selectedCharacter].SetActive(false);
         selectedCharacter++;
-        if(selectedCharacter == skins.Length)
+        if (selectedCharacter == skins.Length)
         {
             selectedCharacter = 0;
-
-            skins[selectedCharacter].SetActive(true);
-            PlayerPrefs.SetInt("SelectedCharacter", selectedCharacter);
         }
+        skins[selectedCharacter].SetActive(true);
+        PlayerPrefs.SetInt("SelectedCharacter", selectedCharacter);
     }
 
     public void ChangePrevious()
@@ -39,7 +51,6 @@ public class CharacterSelect : MonoBehaviour
         {
             selectedCharacter = skins.Length - 1;
         }
-
         skins[selectedCharacter].SetActive(true);
         PlayerPrefs.SetInt("SelectedCharacter", selectedCharacter);
     }
