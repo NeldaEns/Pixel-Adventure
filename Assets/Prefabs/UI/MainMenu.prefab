@@ -308,7 +308,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneIndex: 9
-  DiamondTxt: {fileID: 0}
+  DiamondTxt: {fileID: 4818347526965786830}
 --- !u!1 &264646821982605612
 GameObject:
   m_ObjectHideFlags: 0
@@ -348,10 +348,10 @@ RectTransform:
   m_Father: {fileID: 255879052670534701}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1860, y: 780}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 0, y: 360}
+  m_SizeDelta: {x: 1860, y: 720}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6324115013396365884
 CanvasRenderer:
@@ -696,7 +696,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneIndex: 12
-  DiamondTxt: {fileID: 0}
+  DiamondTxt: {fileID: 4818347526965786830}
 --- !u!1 &558297299016120743
 GameObject:
   m_ObjectHideFlags: 0
@@ -991,7 +991,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &3249480730606507234
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1009,7 +1009,6 @@ RectTransform:
   - {fileID: 9140079406944362946}
   - {fileID: 1867197489107679662}
   - {fileID: 2173992792597814599}
-  - {fileID: 6580353075453270696}
   m_Father: {fileID: 6381005077313970255}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1533,7 +1532,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 84, y: 0}
+  m_AnchoredPosition: {x: 80, y: 0}
   m_SizeDelta: {x: 160, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &432947168108338450
@@ -1571,7 +1570,7 @@ MonoBehaviour:
     m_BestFit: 1
     m_MinSize: 10
     m_MaxSize: 300
-    m_Alignment: 4
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -2060,7 +2059,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
   m_AnchoredPosition: {x: 402, y: 0}
-  m_SizeDelta: {x: 160, y: 160}
+  m_SizeDelta: {x: 180, y: 180}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3444662993713683679
 CanvasRenderer:
@@ -2623,7 +2622,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneIndex: 17
-  DiamondTxt: {fileID: 0}
+  DiamondTxt: {fileID: 4818347526965786830}
 --- !u!1 &1777788703792791650
 GameObject:
   m_ObjectHideFlags: 0
@@ -2854,7 +2853,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneIndex: 23
-  DiamondTxt: {fileID: 0}
+  DiamondTxt: {fileID: 4818347526965786830}
 --- !u!1 &1905991153382405757
 GameObject:
   m_ObjectHideFlags: 0
@@ -3003,7 +3002,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneIndex: 20
-  DiamondTxt: {fileID: 0}
+  DiamondTxt: {fileID: 4818347526965786830}
 --- !u!1 &1924722178270543222
 GameObject:
   m_ObjectHideFlags: 0
@@ -3152,7 +3151,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneIndex: 22
-  DiamondTxt: {fileID: 0}
+  DiamondTxt: {fileID: 4818347526965786830}
 --- !u!1 &2007614605392378059
 GameObject:
   m_ObjectHideFlags: 0
@@ -3301,7 +3300,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneIndex: 26
-  DiamondTxt: {fileID: 0}
+  DiamondTxt: {fileID: 4818347526965786830}
 --- !u!1 &2008378273664197184
 GameObject:
   m_ObjectHideFlags: 0
@@ -3450,7 +3449,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneIndex: 14
-  DiamondTxt: {fileID: 0}
+  DiamondTxt: {fileID: 4818347526965786830}
 --- !u!1 &2017174987600878211
 GameObject:
   m_ObjectHideFlags: 0
@@ -3759,7 +3758,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneIndex: 8
-  DiamondTxt: {fileID: 0}
+  DiamondTxt: {fileID: 4818347526965786830}
 --- !u!1 &2085858304075275050
 GameObject:
   m_ObjectHideFlags: 0
@@ -4392,7 +4391,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneIndex: 25
-  DiamondTxt: {fileID: 0}
+  DiamondTxt: {fileID: 4818347526965786830}
 --- !u!1 &2705590254600183702
 GameObject:
   m_ObjectHideFlags: 0
@@ -4541,7 +4540,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneIndex: 28
-  DiamondTxt: {fileID: 0}
+  DiamondTxt: {fileID: 4818347526965786830}
 --- !u!1 &2706292963941714391
 GameObject:
   m_ObjectHideFlags: 0
@@ -4690,7 +4689,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneIndex: 5
-  DiamondTxt: {fileID: 0}
+  DiamondTxt: {fileID: 4818347526965786830}
 --- !u!1 &2720952005022929730
 GameObject:
   m_ObjectHideFlags: 0
@@ -5065,7 +5064,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneIndex: 6
-  DiamondTxt: {fileID: 0}
+  DiamondTxt: {fileID: 4818347526965786830}
 --- !u!1 &2802104774976726203
 GameObject:
   m_ObjectHideFlags: 0
@@ -5104,8 +5103,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -13}
-  m_SizeDelta: {x: 1860, y: 510}
+  m_AnchoredPosition: {x: 0, y: 0.48446}
+  m_SizeDelta: {x: 1860, y: 481.03}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &5470255298546037097
 MonoBehaviour:
@@ -5200,7 +5199,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneIndex: 0
-  DiamondTxt: {fileID: 4130806747319034255}
+  DiamondTxt: {fileID: 4818347526965786830}
 --- !u!1 &2886673956885422626
 GameObject:
   m_ObjectHideFlags: 0
@@ -6102,7 +6101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneIndex: 16
-  DiamondTxt: {fileID: 0}
+  DiamondTxt: {fileID: 4818347526965786830}
 --- !u!1 &3329550840542653304
 GameObject:
   m_ObjectHideFlags: 0
@@ -6141,7 +6140,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
   m_AnchoredPosition: {x: -402, y: 0}
-  m_SizeDelta: {x: 160, y: 160}
+  m_SizeDelta: {x: 180, y: 180}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5671804204716328794
 CanvasRenderer:
@@ -6465,7 +6464,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneIndex: 32
-  DiamondTxt: {fileID: 0}
+  DiamondTxt: {fileID: 4818347526965786830}
 --- !u!1 &3659208497516164174
 GameObject:
   m_ObjectHideFlags: 0
@@ -7137,7 +7136,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneIndex: 2
-  DiamondTxt: {fileID: 0}
+  DiamondTxt: {fileID: 4818347526965786830}
 --- !u!1 &4190057875235307212
 GameObject:
   m_ObjectHideFlags: 0
@@ -7442,7 +7441,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneIndex: 29
-  DiamondTxt: {fileID: 0}
+  DiamondTxt: {fileID: 4818347526965786830}
 --- !u!1 &4553622736731451530
 GameObject:
   m_ObjectHideFlags: 0
@@ -8026,7 +8025,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneIndex: 10
-  DiamondTxt: {fileID: 0}
+  DiamondTxt: {fileID: 4818347526965786830}
 --- !u!1 &5180191626006466891
 GameObject:
   m_ObjectHideFlags: 0
@@ -8628,8 +8627,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -75}
-  m_SizeDelta: {x: 360, y: 150}
+  m_AnchoredPosition: {x: 0, y: -59}
+  m_SizeDelta: {x: 360, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &659331311239303413
 CanvasRenderer:
@@ -9486,7 +9485,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneIndex: 27
-  DiamondTxt: {fileID: 0}
+  DiamondTxt: {fileID: 4818347526965786830}
 --- !u!1 &6419488692468622408
 GameObject:
   m_ObjectHideFlags: 0
@@ -9712,7 +9711,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneIndex: 31
-  DiamondTxt: {fileID: 0}
+  DiamondTxt: {fileID: 4818347526965786830}
 --- !u!1 &6432075502109053455
 GameObject:
   m_ObjectHideFlags: 0
@@ -10019,7 +10018,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneIndex: 1
-  DiamondTxt: {fileID: 0}
+  DiamondTxt: {fileID: 4818347526965786830}
 --- !u!1 &6636628197161983209
 GameObject:
   m_ObjectHideFlags: 0
@@ -10168,7 +10167,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneIndex: 7
-  DiamondTxt: {fileID: 0}
+  DiamondTxt: {fileID: 4818347526965786830}
 --- !u!1 &6653368855953136044
 GameObject:
   m_ObjectHideFlags: 0
@@ -10463,7 +10462,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneIndex: 11
-  DiamondTxt: {fileID: 0}
+  DiamondTxt: {fileID: 4818347526965786830}
 --- !u!1 &6753989334767896677
 GameObject:
   m_ObjectHideFlags: 0
@@ -10612,7 +10611,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneIndex: 3
-  DiamondTxt: {fileID: 0}
+  DiamondTxt: {fileID: 4818347526965786830}
 --- !u!1 &6774606173480175387
 GameObject:
   m_ObjectHideFlags: 0
@@ -10761,7 +10760,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneIndex: 18
-  DiamondTxt: {fileID: 0}
+  DiamondTxt: {fileID: 4818347526965786830}
 --- !u!1 &6973216076881872900
 GameObject:
   m_ObjectHideFlags: 0
@@ -11229,87 +11228,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneIndex: 35
-  DiamondTxt: {fileID: 0}
---- !u!1 &7152302051926950131
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3160906643911459719}
-  - component: {fileID: 2131519847208912280}
-  - component: {fileID: 4130806747319034255}
-  m_Layer: 5
-  m_Name: Text (Legacy)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &3160906643911459719
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7152302051926950131}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 6580353075453270696}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 80, y: 0}
-  m_SizeDelta: {x: 160, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &2131519847208912280
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7152302051926950131}
-  m_CullTransparentMesh: 1
---- !u!114 &4130806747319034255
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7152302051926950131}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.013207495, b: 0.013207495, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FontData:
-    m_Font: {fileID: 12800000, guid: c10fb168898a6904ebb984eaf4794383, type: 3}
-    m_FontSize: 14
-    m_FontStyle: 0
-    m_BestFit: 1
-    m_MinSize: 10
-    m_MaxSize: 300
-    m_Alignment: 4
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: :9999
+  DiamondTxt: {fileID: 4818347526965786830}
 --- !u!1 &7178155201749167297
 GameObject:
   m_ObjectHideFlags: 0
@@ -11458,7 +11377,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneIndex: 33
-  DiamondTxt: {fileID: 0}
+  DiamondTxt: {fileID: 4818347526965786830}
 --- !u!1 &7205748606364099973
 GameObject:
   m_ObjectHideFlags: 0
@@ -12098,7 +12017,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -50, y: 60}
+  m_AnchoredPosition: {x: -66, y: 59.968}
   m_SizeDelta: {x: 120, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3853987730858456400
@@ -12176,8 +12095,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 89, y: -80}
-  m_SizeDelta: {x: 120, y: 120}
+  m_AnchoredPosition: {x: 81.4, y: -65}
+  m_SizeDelta: {x: 108, y: 108}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &377824035206406366
 CanvasRenderer:
@@ -12525,83 +12444,6 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 26
---- !u!1 &7543575397862788024
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6580353075453270696}
-  - component: {fileID: 7934662372492255763}
-  - component: {fileID: 1654111873881641552}
-  m_Layer: 5
-  m_Name: Diamond
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &6580353075453270696
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7543575397862788024}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 3160906643911459719}
-  m_Father: {fileID: 3249480730606507234}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0}
-  m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -72, y: 273}
-  m_SizeDelta: {x: 90, y: 90}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &7934662372492255763
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7543575397862788024}
-  m_CullTransparentMesh: 1
---- !u!114 &1654111873881641552
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7543575397862788024}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 2c7b213e87256a04dbb880f928f43c8d, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &7544054376702001192
 GameObject:
   m_ObjectHideFlags: 0
@@ -12952,7 +12794,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneIndex: 15
-  DiamondTxt: {fileID: 0}
+  DiamondTxt: {fileID: 4818347526965786830}
 --- !u!1 &7581774338621230215
 GameObject:
   m_ObjectHideFlags: 0
@@ -13101,7 +12943,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneIndex: 34
-  DiamondTxt: {fileID: 0}
+  DiamondTxt: {fileID: 4818347526965786830}
 --- !u!1 &7676510783458460701
 GameObject:
   m_ObjectHideFlags: 0
@@ -13279,7 +13121,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &255879052670534701
 RectTransform:
   m_ObjectHideFlags: 0
@@ -14009,7 +13851,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneIndex: 19
-  DiamondTxt: {fileID: 0}
+  DiamondTxt: {fileID: 4818347526965786830}
 --- !u!1 &8343857698045782202
 GameObject:
   m_ObjectHideFlags: 0
@@ -14158,7 +14000,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneIndex: 21
-  DiamondTxt: {fileID: 0}
+  DiamondTxt: {fileID: 4818347526965786830}
 --- !u!1 &8421701004801259173
 GameObject:
   m_ObjectHideFlags: 0
@@ -14624,7 +14466,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneIndex: 13
-  DiamondTxt: {fileID: 0}
+  DiamondTxt: {fileID: 4818347526965786830}
 --- !u!1 &8906138474970440598
 GameObject:
   m_ObjectHideFlags: 0
@@ -15009,7 +14851,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneIndex: 4
-  DiamondTxt: {fileID: 0}
+  DiamondTxt: {fileID: 4818347526965786830}
 --- !u!1 &9108772147574655702
 GameObject:
   m_ObjectHideFlags: 0
@@ -15158,7 +15000,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneIndex: 24
-  DiamondTxt: {fileID: 0}
+  DiamondTxt: {fileID: 4818347526965786830}
 --- !u!1 &9123972452947465943
 GameObject:
   m_ObjectHideFlags: 0
@@ -15387,7 +15229,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneIndex: 30
-  DiamondTxt: {fileID: 0}
+  DiamondTxt: {fileID: 4818347526965786830}
 --- !u!1 &9186072484699622071
 GameObject:
   m_ObjectHideFlags: 0

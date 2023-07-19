@@ -17,10 +17,7 @@ public class UIGame : UIScreenBase
     public Text txtStrawberry;
     public Text txtDiamond;
     public Text txtCurrentTime;
-
-    public Image[] hearts;
-    public Sprite fullHeart;
-    public Sprite emmtyHeart;
+    public Text txtHealth;
 
     private void Start()
     {
@@ -105,14 +102,7 @@ public class UIGame : UIScreenBase
 
     public void UpdateHeart()
     {
-        foreach(Image img in hearts)
-        {
-            img.sprite = emmtyHeart;
-        }
-        for(int i = 0; i < DataManager.ins.health; i++)
-        {
-            hearts[i].sprite = fullHeart;
-        }
+        txtHealth.text = DataManager.ins.health.ToString();
     }
 
     public void Back()

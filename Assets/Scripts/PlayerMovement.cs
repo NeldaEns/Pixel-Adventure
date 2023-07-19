@@ -114,6 +114,7 @@ public class PlayerMovement : MonoBehaviour
             DataManager.ins.health--;
             if (DataManager.ins.health <= 0)
             {
+                GameController.ins.isGameOver = true;
                 Die();
             }
             else

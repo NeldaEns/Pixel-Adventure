@@ -26,6 +26,7 @@ public class GameController : MonoBehaviour
     public bool moveRight;
     public bool isGrounded;
     public bool doubleJump;
+    public bool isGameOver;
 
     public Transform[] playerPrefabs;
 
@@ -107,6 +108,11 @@ public class GameController : MonoBehaviour
             ((GameOverScreen)UIController.ins.currentScreen).UpdatePineappleText();
             ((GameOverScreen)UIController.ins.currentScreen).UpdateStrawberryText();
             ((GameOverScreen)UIController.ins.currentScreen).UpdateDiamondText();
+        }
+        if (isGameOver)
+        {
+            Instantiate(playerPrefabs[characterIndex], startPoint.transform.position, Quaternion.identity);
+            isGameOver = false;
         }
     }
 
