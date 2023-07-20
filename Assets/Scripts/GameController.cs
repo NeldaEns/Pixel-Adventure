@@ -44,6 +44,7 @@ public class GameController : MonoBehaviour
             DontDestroyOnLoad(gameObject);
         }
         characterIndex = PlayerPrefs.GetInt("SelectedCharacter", 0);
+        isGameOver = false;
     }
 
     private void Start()
@@ -108,11 +109,6 @@ public class GameController : MonoBehaviour
             ((GameOverScreen)UIController.ins.currentScreen).UpdatePineappleText();
             ((GameOverScreen)UIController.ins.currentScreen).UpdateStrawberryText();
             ((GameOverScreen)UIController.ins.currentScreen).UpdateDiamondText();
-        }
-        if (isGameOver)
-        {
-            Instantiate(playerPrefabs[characterIndex], startPoint.transform.position, Quaternion.identity);
-            isGameOver = false;
         }
     }
 

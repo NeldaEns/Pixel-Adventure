@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class CharacterSelect : MonoBehaviour
 {
@@ -68,10 +69,11 @@ public class CharacterSelect : MonoBehaviour
     {
         if(characters[selectedCharacter].isUnlocked == true)
         {
-            unlockButton.gameObject.SetActive(false);
+            unlockButton.gameObject.SetActive(true);
         }
         else
         {
+            unlockButton.GetComponentInChildren<TextMeshProUGUI>().text = "Price: " + characters[selectedCharacter].price;
             if(DataManager.ins.diamond < characters[selectedCharacter].price)
             {
                 unlockButton.gameObject.SetActive(true);
@@ -80,7 +82,7 @@ public class CharacterSelect : MonoBehaviour
             else
             {
                 unlockButton.gameObject.SetActive(true);
-                unlockButton.interactable = true;
+                unlockButton.interactable = true;   
             }
         }
     }
