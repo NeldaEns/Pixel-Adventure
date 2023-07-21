@@ -4,26 +4,25 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class CharacterSelect : MonoBehaviour
+public class CharacterSelect : UIScreenBase
 {
     public GameObject[] skins;
-    public int selectedCharacter;
     public Character[] characters;
     public Button unlockButton;
+    public Text diamondTxt;
 
     private void Awake()
     {
-        selectedCharacter = PlayerPrefs.GetInt("SelectedCharacter", 0);
-        foreach(GameObject player in skins)
+        DataManager.ins.LoadSelectedCharacter();
+        foreach (GameObject player in skins)
         {
             player.SetActive(false);
-
-            skins[selectedCharacter].SetActive(true);
         }
+            skins[DataManager.ins.selectedCharacter].SetActive(true);
 
-        foreach(Character c in characters)
+        foreach (Character c in characters)
         {
-            if(c.price == 0)
+            if (c.price == 0)
             {
                 c.isUnlocked = true;
             }
@@ -35,46 +34,62 @@ public class CharacterSelect : MonoBehaviour
         UpdateUI();
     }
 
+    private void Start()
+    {
+        UpdateDiamondText();
+    }
+    private void Update()
+    {
+        UpdateDiamondText();
+    }
+
+    public void UpdateDiamondText()
+    {
+        diamondTxt.text = DataManager.ins.diamond.ToString();
+    }
+
     public void ChangeNext()
     {
-        skins[selectedCharacter].SetActive(false);
-        selectedCharacter++;
-        if (selectedCharacter == skins.Length)
+        skins[DataManager.ins.selectedCharacter].SetActive(false);
+        DataManager.ins.selectedCharacter++;
+        if (DataManager.ins.selectedCharacter == skins.Length)
         {
-            selectedCharacter = 0;
+            DataManager.ins.selectedCharacter = 0;
         }
-        skins[selectedCharacter].SetActive(true);
-        if(characters[selectedCharacter].isUnlocked)
+        skins[DataManager.ins.selectedCharacter].SetActive(true);
+        if(characters[DataManager.ins.selectedCharacter].isUnlocked)
         {
-            PlayerPrefs.SetInt("SelectedCharacter", selectedCharacter);
+        DataManager.ins.SaveSelectedCharacter();
         }
+        UpdateUI();
     }
 
     public void ChangePrevious()
     {
-        skins[selectedCharacter].SetActive(false);
-        selectedCharacter--;
-        if(selectedCharacter == -1)
+        skins[DataManager.ins.selectedCharacter].SetActive(false);
+        DataManager.ins.selectedCharacter--;
+        if(DataManager.ins.selectedCharacter == -1)
         {
-            selectedCharacter = skins.Length - 1;
+            DataManager.ins.selectedCharacter = skins.Length - 1;
         }
-        skins[selectedCharacter].SetActive(true);
-        if (characters[selectedCharacter].isUnlocked)
+        skins[DataManager.ins.selectedCharacter].SetActive(true);
+        if (characters[DataManager.ins.selectedCharacter].isUnlocked)
         {
-            PlayerPrefs.SetInt("SelectedCharacter", selectedCharacter);
+        DataManager.ins.SaveSelectedCharacter();
         }
+        UpdateUI();
     }
 
     public void UpdateUI()
     {
-        if(characters[selectedCharacter].isUnlocked == true)
+        if(characters[DataManager.ins.selectedCharacter].isUnlocked == true)
         {
-            unlockButton.gameObject.SetActive(true);
+            unlockButton.gameObject.SetActive(false);
         }
         else
         {
-            unlockButton.GetComponentInChildren<TextMeshProUGUI>().text = "Price: " + characters[selectedCharacter].price;
-            if(DataManager.ins.diamond < characters[selectedCharacter].price)
+            unlockButton.GetComponentInChildren<TextMeshProUGUI>().text = "Price:" + characters[DataManager.ins.selectedCharacter].price;
+            if(DataManager.ins.diamond < characters[DataManager.ins.selectedCharacter].price)
             {
                 unlockButton.gameObject.SetActive(true);
                 unlockButton.interactable = false;
@@ -89,11 +104,23 @@ public class CharacterSelect : MonoBehaviour
 
     public void Unlocked()
     {
-        int price = characters[selectedCharacter].price;
-        PlayerPrefs.SetInt("diamond_key", DataManager.ins.diamond - price);
-        PlayerPrefs.SetInt(characters[selectedCharacter].name, 1);
-        PlayerPrefs.SetInt("SelectedCharacter", selectedCharacter);
-        characters[selectedCharacter].isUnlocked = true;
+        int price = characters[DataManager.ins.selectedCharacter].price;
+        DataManager.ins.diamond = DataManager.ins.diamond - price;
+        DataManager.ins.SaveDiamond();
+        PlayerPrefs.SetInt(characters[DataManager.ins.selectedCharacter].name, 1);
+        DataManager.ins.SaveSelectedCharacter();
+        characters[DataManager.ins.selectedCharacter].isUnlocked = true;
         UpdateUI();
+    }
+
+    public override void OnShow()
+    {
+        base.OnShow();
+        UpdateDiamondText();
+    }
+
+    public override void Hide()
+    {
+        base.Hide();
     }
 }

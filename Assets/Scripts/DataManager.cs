@@ -17,6 +17,7 @@ public class DataManager : MonoBehaviour
     public int diamond;
     public int numberofUnlockedLevels;
     public int health ;
+    public int selectedCharacter;
 
     public float currentTime;
     public float maxTime ;
@@ -33,6 +34,7 @@ public class DataManager : MonoBehaviour
     public const string diamond_key = "diamond_key";
     public const string first_time_play = "first_time_play";
     public const string time_key = "time_key";
+    public const string selected_character = "selected_character";
 
     public bool timeActive = false;
 
@@ -48,12 +50,6 @@ public class DataManager : MonoBehaviour
             DontDestroyOnLoad(gameObject);
         }
         FirstTimePlay();
-    }
-
-    private void Start()
-    {
-
-        currentTime = maxTime;
     }
 
     public void FirstTimePlay()
@@ -79,8 +75,8 @@ public class DataManager : MonoBehaviour
         LoadOrange();
         LoadStrawberry();
         LoadPineapple();
-        LoadTime();
         LoadDiamond();
+        LoadSelectedCharacter();
     }
 
     public void StartDataGame()
@@ -93,9 +89,8 @@ public class DataManager : MonoBehaviour
         orange = 0;
         pineapple = 0;
         strawberry = 0;
-        diamond = 0;
+        diamond = 799;
         currentTime = maxTime;
-        SaveTime();
         SaveApple();
         SaveBanana();
         SaveCherries();
@@ -108,8 +103,7 @@ public class DataManager : MonoBehaviour
     }   
 
     public void DataGame()
-    {
-        health = 3;
+    {    
         apple = 0;
         banana = 0;
         cherries = 0;
@@ -195,20 +189,11 @@ public class DataManager : MonoBehaviour
 
     public void LoadDiamond()
     {
-        diamond = PlayerPrefs.GetInt(diamond_key);
+        diamond = PlayerPrefs.GetInt(diamond_key, 0);
     }
     public void SaveDiamond()
     {
         PlayerPrefs.SetInt(diamond_key, diamond);
-    }
-
-    public void LoadTime()
-    {
-        currentTime = PlayerPrefs.GetFloat(time_key, 0);
-    }
-    public void SaveTime()
-    {
-        PlayerPrefs.SetFloat(time_key, currentTime);
     }
 
     public void LoadLevelsUnlocked()
@@ -218,6 +203,15 @@ public class DataManager : MonoBehaviour
     public void SaveLevelsUnlocked()
     {
         PlayerPrefs.SetInt(levelsUnlocked, numberofUnlockedLevels + 1);
+    }
+
+    public void LoadSelectedCharacter()
+    {
+        selectedCharacter = PlayerPrefs.GetInt(selected_character, 0);
+    }
+    public void SaveSelectedCharacter()
+    {
+        PlayerPrefs.SetInt(selected_character, selectedCharacter);
     }
 
 }

@@ -8,18 +8,7 @@ using UnityEngine.SceneManagement;
 public class MenuUI : UIScreenBase
 {
     public int sceneIndex;
-    public Text DiamondTxt;
 
-
-    private void Start()
-    {
-        UpdateDiamond();
-    }
-
-    private void Update()
-    {
-        UpdateDiamond();
-    }
     public void OpenLv()
     {
         DataManager.ins.DataGame();
@@ -28,14 +17,8 @@ public class MenuUI : UIScreenBase
         UIController.ins.ShowUIGame();       
     }
 
-    public void UpdateDiamond()
-    {
-        DiamondTxt.text = DataManager.ins.diamond.ToString();
-    }
-
     public override void OnShow()
     {
-        UpdateDiamond();
         base.OnShow();
     }
 

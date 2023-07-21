@@ -121689,12 +121689,12 @@ MonoBehaviour:
   moveRight: 0
   isGrounded: 0
   doubleJump: 0
+  isGameOver: 0
   playerPrefabs:
-  - {fileID: 2809243169640852231, guid: 459c8b8505f098d42895f4e49be8ccfd, type: 3}
-  - {fileID: 2809243169640852231, guid: 4c197c413c8dc664bbfa0c7cfd7defbd, type: 3}
-  - {fileID: 2809243169640852231, guid: a7038207602808c4ba15c1bb22b82473, type: 3}
-  - {fileID: 2809243169640852231, guid: 5e1b9f526e122004cad432a0f9137aaa, type: 3}
-  characterIndex: 0
+  - {fileID: 2809243169640852226, guid: 459c8b8505f098d42895f4e49be8ccfd, type: 3}
+  - {fileID: 2809243169640852226, guid: a7038207602808c4ba15c1bb22b82473, type: 3}
+  - {fileID: 2809243169640852226, guid: 5e1b9f526e122004cad432a0f9137aaa, type: 3}
+  - {fileID: 2809243169640852226, guid: 4c197c413c8dc664bbfa0c7cfd7defbd, type: 3}
 --- !u!4 &1520512035
 Transform:
   m_ObjectHideFlags: 0

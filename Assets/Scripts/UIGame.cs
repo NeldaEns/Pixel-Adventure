@@ -123,6 +123,7 @@ public class UIGame : UIScreenBase
         UpdateOrangeText();
         UpdateDiamondText();
         UpdateHeart();
+        UpdateTimeText();
     }
 
     public void OnButtonJumpClick()

@@ -28,9 +28,7 @@ public class GameController : MonoBehaviour
     public bool doubleJump;
     public bool isGameOver;
 
-    public Transform[] playerPrefabs;
-
-    public int characterIndex;
+    public GameObject[] playerPrefabs;
 
     private void Awake()
     {
@@ -43,14 +41,15 @@ public class GameController : MonoBehaviour
             ins = this;
             DontDestroyOnLoad(gameObject);
         }
-        characterIndex = PlayerPrefs.GetInt("SelectedCharacter", 0);
+        DataManager.ins.LoadSelectedCharacter();
+        GameObject player = Instantiate(playerPrefabs[DataManager.ins.selectedCharacter], startPoint.transform.position, Quaternion.identity);
+        SpawnNv();
         isGameOver = false;
     }
 
     private void Start()
     {
         UpdateQuantityFruit();
-        Instantiate(playerPrefabs[characterIndex], startPoint.transform.position, Quaternion.identity);
     }
 
 
@@ -58,6 +57,34 @@ public class GameController : MonoBehaviour
     {
         TimeUpdate();
         UpdateQuantityFruit();
+    }
+
+    public void SpawnNv()
+    {
+        if(DataManager.ins.selectedCharacter == 0)
+        {
+            DataManager.ins.health = 3;
+            DataManager.ins.maxTime = 90;
+            DataManager.ins.currentTime = DataManager.ins.maxTime;
+        }
+        if (DataManager.ins.selectedCharacter == 1)
+        {
+            DataManager.ins.health = 3;
+            DataManager.ins.maxTime = 120;
+            DataManager.ins.currentTime = DataManager.ins.maxTime;
+        }
+        if (DataManager.ins.selectedCharacter == 2)
+        {
+            DataManager.ins.health = 4;
+            DataManager.ins.maxTime = 150;
+            DataManager.ins.currentTime = DataManager.ins.maxTime;
+        }
+        if (DataManager.ins.selectedCharacter == 3)
+        {
+            DataManager.ins.health = 5;
+            DataManager.ins.maxTime = 180;
+            DataManager.ins.currentTime = DataManager.ins.maxTime;
+        }
     }
 
     public void CheckWinLose()
@@ -206,7 +233,7 @@ public class GameController : MonoBehaviour
 
     public void PlayerJump()
     {
-        playerPrefabs[characterIndex].GetComponent<PlayerMovement>().JumpButton();
+        playerPrefabs[DataManager.ins.selectedCharacter].GetComponent<PlayerMovement>().JumpButton();
     }
 
 }
