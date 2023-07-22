@@ -50,6 +50,7 @@ public class PlayerMovement : MonoBehaviour
         {
             if (IsGround() || GameController.ins.doubleJump)
             {
+                AudioManager.ins.PlaySFX("firstjump");
                 rb.velocity = new Vector2(rb.velocity.x, jumpForce);
 
                 GameController.ins.doubleJump = !GameController.ins.doubleJump;
@@ -57,6 +58,7 @@ public class PlayerMovement : MonoBehaviour
 
             if (Input.GetButtonUp("Jump") && rb.velocity.y > 0f)
             {
+                AudioManager.ins.PlaySFX("secondjump");
                 rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
             }
         }
@@ -114,6 +116,7 @@ public class PlayerMovement : MonoBehaviour
             DataManager.ins.health--;
             if (DataManager.ins.health <= 0)
             {
+                AudioManager.ins.PlaySFX("death");
                 GameController.ins.isGameOver = true;
                 Die();
             }
@@ -134,47 +137,55 @@ public class PlayerMovement : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Apple"))
         {
+            AudioManager.ins.PlaySFX("fruits");
             GameController.ins.addApple = true;
             Destroy(collision.gameObject);
         }
         if (collision.gameObject.CompareTag("Banana"))
         {
+            AudioManager.ins.PlaySFX("fruits");
             GameController.ins.addBanana = true;
             Destroy(collision.gameObject);
         }
         if (collision.gameObject.CompareTag("Cherry"))
         {
+            AudioManager.ins.PlaySFX("fruits");
             GameController.ins.addCherries = true;
             Destroy(collision.gameObject);
         }
         if (collision.gameObject.CompareTag("Kiwi"))
         {
+            AudioManager.ins.PlaySFX("fruits");
             GameController.ins.addKiwi = true;
             Destroy(collision.gameObject);
         }
         if (collision.gameObject.CompareTag("Melon"))
         {
-            GameController.ins.addMelon
- = true;
+            AudioManager.ins.PlaySFX("fruits");
+            GameController.ins.addMelon = true;
             Destroy(collision.gameObject);
         }
         if (collision.gameObject.CompareTag("Orange"))
         {
+            AudioManager.ins.PlaySFX("fruits");
             GameController.ins.addOrange = true;
             Destroy(collision.gameObject);
         }
         if (collision.gameObject.CompareTag("Pineapple"))
         {
+            AudioManager.ins.PlaySFX("fruits");
             GameController.ins.addPineapple = true;
             Destroy(collision.gameObject);
         }
         if (collision.gameObject.CompareTag("Strawberry"))
         {
+            AudioManager.ins.PlaySFX("fruits");
             GameController.ins.addStrawberry = true;
             Destroy(collision.gameObject);
         }
         if (collision.gameObject.CompareTag("Diamond"))
         {
+            AudioManager.ins.PlaySFX("diamond");
             GameController.ins.addDiamond = true;
             Destroy(collision.gameObject);
         }

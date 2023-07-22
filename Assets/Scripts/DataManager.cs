@@ -19,8 +19,12 @@ public class DataManager : MonoBehaviour
     public int health ;
     public int selectedCharacter;
 
+    public float musicVolume;
+    public float sfxVolume;
     public float currentTime;
-    public float maxTime ;
+    public float maxTime;
+    public float musicSliderValue;
+    public float sfxSliderValue;
 
     public const string levelsUnlocked = "levelsUnlocked";
     public const string apple_key = "apple_key";
@@ -35,6 +39,10 @@ public class DataManager : MonoBehaviour
     public const string first_time_play = "first_time_play";
     public const string time_key = "time_key";
     public const string selected_character = "selected_character";
+    public const string music_volume = "music_volume";
+    public const string sfx_volume = "sfx_volume";
+    private const string music_slider_value = "music_slider_value";
+    private const string sfx_slider_value = "sfx_slider_value";
 
     public bool timeActive = false;
 
@@ -49,6 +57,8 @@ public class DataManager : MonoBehaviour
             ins = this;
             DontDestroyOnLoad(gameObject);
         }
+        sfxSliderValue = 1;
+        musicSliderValue = 1;
         FirstTimePlay();
     }
 
@@ -77,10 +87,16 @@ public class DataManager : MonoBehaviour
         LoadPineapple();
         LoadDiamond();
         LoadSelectedCharacter();
+        LoadSFXVolume();
+        LoadMusicVolume();
+        LoadSFXSliderValue();
+        LoadMusicSliderValue();
     }
 
     public void StartDataGame()
     {
+        musicVolume = 1f;
+        sfxVolume = 1f;
         apple = 0;
         banana = 0;
         cherries = 0;
@@ -100,6 +116,10 @@ public class DataManager : MonoBehaviour
         SavePineapple();
         SaveStrawberry();
         SaveDiamond();
+        SaveMusicVolume();
+        SaveSFXVolume();
+        SaveMusicSliderValue();
+        SaveSFXSliderValue();
     }   
 
     public void DataGame()
@@ -214,4 +234,39 @@ public class DataManager : MonoBehaviour
         PlayerPrefs.SetInt(selected_character, selectedCharacter);
     }
 
+    public void LoadMusicVolume()
+    {
+        musicVolume = PlayerPrefs.GetFloat(music_volume);
+    }
+    public void SaveMusicVolume()
+    {
+        PlayerPrefs.SetFloat(music_volume, musicVolume);
+    }
+
+    public void LoadSFXVolume()
+    {
+        sfxVolume = PlayerPrefs.GetFloat(sfx_volume);
+    }
+    public void SaveSFXVolume()
+    {
+        PlayerPrefs.SetFloat(sfx_volume, sfxVolume);
+    }
+
+    public void LoadSFXSliderValue()
+    {
+        sfxSliderValue = PlayerPrefs.GetFloat(sfx_slider_value);
+    }
+    public void SaveSFXSliderValue()
+    {
+        PlayerPrefs.SetFloat(sfx_slider_value, sfxSliderValue);
+    }
+
+    public void LoadMusicSliderValue()
+    {
+        musicSliderValue = PlayerPrefs.GetFloat(music_slider_value);
+    }
+    public void SaveMusicSliderValue()
+    {
+        PlayerPrefs.SetFloat(music_slider_value, musicSliderValue);
+    }
 }

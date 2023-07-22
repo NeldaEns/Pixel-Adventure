@@ -125,6 +125,7 @@ public class GameController : MonoBehaviour
         }
         if (DataManager.ins.currentTime <= 0)
         {
+            AudioManager.ins.PlaySFX("gameover");
             DataManager.ins.timeActive = false;
             UIController.ins.ShowGameOver();
             ((GameOverScreen)UIController.ins.currentScreen).UpdateAppleText();

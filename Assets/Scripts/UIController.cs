@@ -28,6 +28,8 @@ public class UIController : MonoBehaviour
             DontDestroyOnLoad(gameObject);
             DontDestroyOnLoad(mainCamera);
         }
+        mainCamera.GetComponent<AudioListener>().enabled = mainCamera.GetComponent<AudioListener>().enabled;
+
     }
 
     private void Start()
@@ -40,6 +42,7 @@ public class UIController : MonoBehaviour
 
     public void ShowMenu()
     {
+        mainCamera.GetComponent<AudioListener>().enabled = true;
         bg.SetActive(true);
         Destroy(currentScreen.gameObject);
         currentScreen = Instantiate(mainMenu, transform).GetComponent<MenuUI>();
@@ -47,6 +50,7 @@ public class UIController : MonoBehaviour
 
     public void ShowUIGame()
     {
+        mainCamera.GetComponent<AudioListener>().enabled = false;
         bg.SetActive(false);
         Destroy(currentScreen.gameObject);
         currentScreen = Instantiate(gamePanel, transform).GetComponent<UIGame>();
@@ -54,6 +58,7 @@ public class UIController : MonoBehaviour
 
     public void ShowGameOver()
     {
+        mainCamera.GetComponent<AudioListener>().enabled = false;
         bg.SetActive(false);
         Destroy(currentScreen.gameObject);
         currentScreen = Instantiate(gameOverPanel, transform).GetComponent<GameOverScreen>();
@@ -61,6 +66,7 @@ public class UIController : MonoBehaviour
 
     public void ShowLevelUp()
     {
+        mainCamera.GetComponent<AudioListener>().enabled = false;
         bg.SetActive(false);
         Destroy(currentScreen.gameObject);
         currentScreen = Instantiate(levelComplete, transform).GetComponent<LevelUp>();
