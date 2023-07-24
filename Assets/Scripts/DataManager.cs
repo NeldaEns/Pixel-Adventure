@@ -75,6 +75,7 @@ public class DataManager : MonoBehaviour
         }
     }
 
+
     public void LoadDataGame()
     {
         LoadApple();
@@ -97,24 +98,8 @@ public class DataManager : MonoBehaviour
     {
         musicVolume = 1f;
         sfxVolume = 1f;
-        apple = 0;
-        banana = 0;
-        cherries = 0;
-        kiwi = 0;
-        melon = 0;
-        orange = 0;
-        pineapple = 0;
-        strawberry = 0;
         diamond = 799;
         currentTime = maxTime;
-        SaveApple();
-        SaveBanana();
-        SaveCherries();
-        SaveKiwi();
-        SaveMelon();
-        SaveOrange();
-        SavePineapple();
-        SaveStrawberry();
         SaveDiamond();
         SaveMusicVolume();
         SaveSFXVolume();
@@ -123,7 +108,7 @@ public class DataManager : MonoBehaviour
     }   
 
     public void DataGame()
-    {    
+    {
         apple = 0;
         banana = 0;
         cherries = 0;

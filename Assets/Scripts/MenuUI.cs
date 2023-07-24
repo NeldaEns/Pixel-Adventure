@@ -9,15 +9,21 @@ public class MenuUI : UIScreenBase
 {
     public int sceneIndex;
     [SerializeField] public Slider musicSlider, sfxSlider;
+    public Text diamondTxt;
 
     private void Start()
     {
+        UpdateDiamondText();
         sfxSlider.value = DataManager.ins.sfxSliderValue;
         DataManager.ins.sfxVolume = sfxSlider.value;
         AudioManager.ins.SFXVolume(sfxSlider.value);
         musicSlider.value = DataManager.ins.musicSliderValue;
         DataManager.ins.musicVolume = musicSlider.value;
         AudioManager.ins.MusicVolume(musicSlider.value);
+    }
+    private void Update()
+    {
+        UpdateDiamondText();
     }
     public void OpenLv()
     {
@@ -26,6 +32,11 @@ public class MenuUI : UIScreenBase
         DataManager.ins.timeActive = true;       
         SceneManager.LoadScene(sceneIndex);
         UIController.ins.ShowUIGame();       
+    }
+
+    public void WatchAds()
+    {
+        ManagerAds.Ins.ShowBanner();
     }
 
     public void MusicVolume()
@@ -46,6 +57,11 @@ public class MenuUI : UIScreenBase
         AudioManager.ins.SFXVolume(sfxSlider.value);
     }
 
+    public void UpdateDiamondText()
+    {
+        diamondTxt.text = DataManager.ins.diamond.ToString();
+    }
+
     public void ClickButton()
     {
         AudioManager.ins.PlaySFX("click");
@@ -54,6 +70,7 @@ public class MenuUI : UIScreenBase
     public override void OnShow()
     {
         base.OnShow();
+        UpdateDiamondText();
     }
 
     public override void Hide()
