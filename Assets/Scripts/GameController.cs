@@ -29,6 +29,7 @@ public class GameController : MonoBehaviour
     public bool isGameOver;
 
     public GameObject[] playerPrefabs;
+    public PlayerMovement player1;
 
     private void Awake()
     {
@@ -52,11 +53,11 @@ public class GameController : MonoBehaviour
         UpdateQuantityFruit();
     }
 
-
     private void Update()
     {
         TimeUpdate();
         UpdateQuantityFruit();
+        player1 = FindObjectOfType<PlayerMovement>();
     }
 
     public void SpawnNv()
@@ -91,6 +92,9 @@ public class GameController : MonoBehaviour
     {
         if (levelComple)
         {
+            moveLeft = false;
+            moveRight = false;
+            ManagerAds.Ins.ShowInterstitial();
             DataManager.ins.timeActive = false;
             if (apple.Length > 0 || banana.Length > 0 || cherries.Length > 0 || orange.Length > 0 || melon.Length > 0 || strawberry.Length > 0 || pineapple.Length > 0 || kiwi.Length > 0)
             {
@@ -110,14 +114,6 @@ public class GameController : MonoBehaviour
             else if (apple.Length == 0 && banana.Length == 0 && cherries.Length == 0 && kiwi.Length == 0 && orange.Length == 0 && melon.Length == 0 && pineapple.Length == 0 && strawberry.Length == 0)
             {
                 UIController.ins.ShowLevelUp();
-                ((LevelUp)UIController.ins.currentScreen).UpdateAppleText();
-                ((LevelUp)UIController.ins.currentScreen).UpdateBananaText();   
-                ((LevelUp)UIController.ins.currentScreen).UpdateCherriesText();
-                ((LevelUp)UIController.ins.currentScreen).UpdateKiwiText();
-                ((LevelUp)UIController.ins.currentScreen).UpdateMelonText();
-                ((LevelUp)UIController.ins.currentScreen).UpdateOrangeText();
-                ((LevelUp)UIController.ins.currentScreen).UpdatePineappleText();
-                ((LevelUp)UIController.ins.currentScreen).UpdateStrawberryText();
                 ((LevelUp)UIController.ins.currentScreen).UpdateDiamondText();
                 ((LevelUp)UIController.ins.currentScreen).TimeFinal();
                 levelComple = false;
@@ -125,6 +121,9 @@ public class GameController : MonoBehaviour
         }
         if (DataManager.ins.currentTime <= 0)
         {
+            moveLeft = false;
+            moveRight = false;
+            ManagerAds.Ins.ShowInterstitial();
             AudioManager.ins.PlaySFX("gameover");
             DataManager.ins.timeActive = false;
             UIController.ins.ShowGameOver();
@@ -229,12 +228,19 @@ public class GameController : MonoBehaviour
         melon = GameObject.FindGameObjectsWithTag("Melon");
         pineapple = GameObject.FindGameObjectsWithTag("Pineapple");
         strawberry = GameObject.FindGameObjectsWithTag("Strawberry");
-        diamond = GameObject.FindGameObjectsWithTag("Diamond");
+        DataManager.ins.apple = apple.Length;
+        DataManager.ins.banana = banana.Length;
+        DataManager.ins.cherries = cherries.Length;
+        DataManager.ins.kiwi = kiwi.Length;
+        DataManager.ins.orange = orange.Length;
+        DataManager.ins.melon = melon.Length;
+        DataManager.ins.pineapple = pineapple.Length;
+        DataManager.ins.strawberry = strawberry.Length;
     }
 
     public void PlayerJump()
     {
-        playerPrefabs[DataManager.ins.selectedCharacter].GetComponent<PlayerMovement>().JumpButton();
+        player1.JumpButton();     
     }
 
 }

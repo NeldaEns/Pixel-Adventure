@@ -38,30 +38,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        //MovePlayer();
-
-        dirX = Input.GetAxisRaw("Horizontal") * moveSpeed;
-        if (IsGround() && !Input.GetButton("Jump"))
-        {
-            GameController.ins.doubleJump = false;
-        }
-
-        if (Input.GetButtonDown("Jump"))
-        {
-            if (IsGround() || GameController.ins.doubleJump)
-            {
-                AudioManager.ins.PlaySFX("firstjump");
-                rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-
-                GameController.ins.doubleJump = !GameController.ins.doubleJump;
-            }
-
-            if (Input.GetButtonUp("Jump") && rb.velocity.y > 0f)
-            {
-                AudioManager.ins.PlaySFX("secondjump");
-                rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
-            }
-        }
+         MovePlayer();
         UpdateAnimationState();
     }
 
@@ -215,9 +192,9 @@ public class PlayerMovement : MonoBehaviour
     public void JumpButton()
     {
         if (GameController.ins.isGrounded)
-        {        
-            GameController.ins.isGrounded = false;
-            rb.velocity = Vector2.up * jumpForce;           
+        {
+           GameController.ins.isGrounded = false;
+           rb.velocity = Vector2.up * jumpForce;
            Invoke("EnableDoubleJump", delayBeforeDoubleJump);
         }
         if (GameController.ins.doubleJump)

@@ -75,7 +75,6 @@ public class DataManager : MonoBehaviour
         }
     }
 
-
     public void LoadDataGame()
     {
         LoadApple();
@@ -109,14 +108,6 @@ public class DataManager : MonoBehaviour
 
     public void DataGame()
     {
-        apple = 0;
-        banana = 0;
-        cherries = 0;
-        kiwi = 0;
-        melon = 0;
-        orange = 0;
-        pineapple = 0;
-        strawberry = 0;
         currentTime = maxTime;
     }
 

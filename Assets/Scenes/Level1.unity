@@ -2068,6 +2068,7 @@ MonoBehaviour:
   - {fileID: 2809243169640852226, guid: a7038207602808c4ba15c1bb22b82473, type: 3}
   - {fileID: 2809243169640852226, guid: 5e1b9f526e122004cad432a0f9137aaa, type: 3}
   - {fileID: 2809243169640852226, guid: 4c197c413c8dc664bbfa0c7cfd7defbd, type: 3}
+  player1: {fileID: 0}
 --- !u!4 &712798829
 Transform:
   m_ObjectHideFlags: 0
@@ -6000,7 +6001,7 @@ PrefabInstance:
     - target: {fileID: 4650438178764767508, guid: 67778035eafbd7f44b95cfb971fa7c0c,
         type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 4650438178764767510, guid: 67778035eafbd7f44b95cfb971fa7c0c,
         type: 3}

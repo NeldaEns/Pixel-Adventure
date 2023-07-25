@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.Events;
 
 
 public class MenuUI : UIScreenBase
@@ -10,6 +11,7 @@ public class MenuUI : UIScreenBase
     public int sceneIndex;
     [SerializeField] public Slider musicSlider, sfxSlider;
     public Text diamondTxt;
+    public UnityAction<bool> x;
 
     private void Start()
     {
@@ -36,7 +38,15 @@ public class MenuUI : UIScreenBase
 
     public void WatchAds()
     {
-        ManagerAds.Ins.ShowBanner();
+        ManagerAds.Ins.ShowRewardedVideo((x) =>
+        {
+            if(x)
+            {
+                AudioManager.ins.PlaySFX("diamond");
+                DataManager.ins.diamond += 30;
+                DataManager.ins.SaveDiamond();
+            }
+        });
     }
 
     public void MusicVolume()

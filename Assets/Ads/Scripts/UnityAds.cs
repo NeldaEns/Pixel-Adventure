@@ -52,7 +52,8 @@ public class UnityAds : MonoBehaviour/*, IUnityAdsInitializationListener*/
 //    #region video
 //    public void RequestRewardVideo()
 //    {
-//        rewardedVideo.LoadAd(ID_REWARD, () => {
+//        rewardedVideo.LoadAd(ID_REWARD, () =>
+//        {
 //            StartCoroutine(RequestRewardVideoCoroutine());
 //        });
 //    }
@@ -85,7 +86,8 @@ public class UnityAds : MonoBehaviour/*, IUnityAdsInitializationListener*/
 
 //    public void RequestInterstitial()
 //    {
-//        interstitial.LoadAd(ID_FULL, () => {
+//        interstitial.LoadAd(ID_FULL, () =>
+//        {
 //            StartCoroutine(RequestInterstitialCoroutine());
 //        });
 //    }
@@ -227,76 +229,76 @@ public class UnityAds : MonoBehaviour/*, IUnityAdsInitializationListener*/
 //        public void OnUnityAdsShowClick(string adUnitId) { }
 //    }
 
-    //public class BannerUnity
-    //{
-    //    public bool bannerLoaded = false;
-    //    public void SetPosition(BannerPosition position)
-    //    {
-    //        Advertisement.Banner.SetPosition(position);
-    //    }
+//    public class BannerUnity
+//    {
+//        public bool bannerLoaded = false;
+//        public void SetPosition(BannerPosition position)
+//        {
+//            Advertisement.Banner.SetPosition(position);
+//        }
 
-    //    public void RequestBanner(string adUnitId)
-    //    {
-    //        // Set up options to notify the SDK of load events:
-    //        BannerLoadOptions options = new BannerLoadOptions
-    //        {
-    //            loadCallback = OnBannerLoaded,
-    //            errorCallback = OnBannerError
-    //        };
+//        public void RequestBanner(string adUnitId)
+//        {
+//            // Set up options to notify the SDK of load events:
+//            BannerLoadOptions options = new BannerLoadOptions
+//            {
+//                loadCallback = OnBannerLoaded,
+//                errorCallback = OnBannerError
+//            };
 
-    //        // Load the Ad Unit with banner content:
-    //        Advertisement.Banner.Load(adUnitId, options);
-    //    }
+//            // Load the Ad Unit with banner content:
+//            Advertisement.Banner.Load(adUnitId, options);
+//        }
 
-    //    public bool BannerLoaded()
-    //    {
-    //        return bannerLoaded;
-    //    }
+//        public bool BannerLoaded()
+//        {
+//            return bannerLoaded;
+//        }
 
-    //    // Implement code to execute when the loadCallback event triggers:
-    //    void OnBannerLoaded()
-    //    {
-    //        Debug.Log("Banner loaded");
-    //        bannerLoaded = true;
-    //    }
+//        // Implement code to execute when the loadCallback event triggers:
+//        void OnBannerLoaded()
+//        {
+//            Debug.Log("Banner loaded");
+//            bannerLoaded = true;
+//        }
 
-    //    // Implement code to execute when the load errorCallback event triggers:
-    //    void OnBannerError(string message)
-    //    {
-    //        Debug.Log($"Banner Error: {message}");
-    //        // Optionally execute additional code, such as attempting to load another ad.
-    //        bannerLoaded = false;
-    //    }
+//        // Implement code to execute when the load errorCallback event triggers:
+//        void OnBannerError(string message)
+//        {
+//            Debug.Log($"Banner Error: {message}");
+//            // Optionally execute additional code, such as attempting to load another ad.
+//            bannerLoaded = false;
+//        }
 
-    //    // Implement a method to call when the Show Banner button is clicked:
-    //    public void ShowBanner(string adUnitId)
-    //    {
-    //        // Set up options to notify the SDK of show events:
-    //        BannerOptions options = new BannerOptions
-    //        {
-    //            clickCallback = OnBannerClicked,
-    //            hideCallback = OnBannerHidden,
-    //            showCallback = OnBannerShown
-    //        };
+//        // Implement a method to call when the Show Banner button is clicked:
+//        public void ShowBanner(string adUnitId)
+//        {
+//            // Set up options to notify the SDK of show events:
+//            BannerOptions options = new BannerOptions
+//            {
+//                clickCallback = OnBannerClicked,
+//                hideCallback = OnBannerHidden,
+//                showCallback = OnBannerShown
+//            };
 
-    //        // Show the loaded Banner Ad Unit:
-    //        Advertisement.Banner.Show(adUnitId, options);
-    //    }
+//            // Show the loaded Banner Ad Unit:
+//            Advertisement.Banner.Show(adUnitId, options);
+//        }
 
-    //    public void HideBanner()
-    //    {
-    //        Advertisement.Banner.Hide(true);
-    //    }
+//        public void HideBanner()
+//        {
+//            Advertisement.Banner.Hide(true);
+//        }
 
-    //    // Implement a method to call when the Hide Banner button is clicked:
-    //    void HideBannerAd()
-    //    {
-    //        // Hide the banner:
-    //        Advertisement.Banner.Hide();
-    //    }
+//        // Implement a method to call when the Hide Banner button is clicked:
+//        void HideBannerAd()
+//        {
+//            // Hide the banner:
+//            Advertisement.Banner.Hide();
+//        }
 
-    //    void OnBannerClicked() { }
-    //    void OnBannerShown() { }
-    //    void OnBannerHidden() { }
-    //}
+//        void OnBannerClicked() { }
+//        void OnBannerShown() { }
+//        void OnBannerHidden() { }
+//    }
 }

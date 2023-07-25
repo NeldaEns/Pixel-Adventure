@@ -59562,7 +59562,7 @@ GameObject:
   - component: {fileID: 2082896466}
   m_Layer: 0
   m_Name: Moving Platform 1
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -59726,6 +59726,7 @@ MonoBehaviour:
   - {fileID: 2809243169640852226, guid: a7038207602808c4ba15c1bb22b82473, type: 3}
   - {fileID: 2809243169640852226, guid: 5e1b9f526e122004cad432a0f9137aaa, type: 3}
   - {fileID: 2809243169640852226, guid: 4c197c413c8dc664bbfa0c7cfd7defbd, type: 3}
+  player1: {fileID: 0}
 --- !u!4 &2129272954
 Transform:
   m_ObjectHideFlags: 0

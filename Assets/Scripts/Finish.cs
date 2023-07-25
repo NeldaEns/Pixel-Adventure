@@ -9,7 +9,7 @@ public class Finish : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player" /*&& !GameController.ins.levelComple*/)
+        if (collision.gameObject.tag == "Player" )
         {
             AudioManager.ins.PlaySFX("levelcomplete");
             GameController.ins.levelComple = true;
@@ -17,7 +17,7 @@ public class Finish : MonoBehaviour
                 && GameController.ins.orange.Length == 0 && GameController.ins.melon.Length == 0 && GameController.ins.pineapple.Length == 0 && GameController.ins.strawberry.Length == 0)
             {
                 DataManager.ins.LoadLevelsUnlocked();
-                if (DataManager.ins.numberofUnlockedLevels <= levelToUnlock)
+                if (DataManager.ins.numberofUnlockedLevels == levelToUnlock - 1)
                 {
                     DataManager.ins.SaveLevelsUnlocked();
                 }

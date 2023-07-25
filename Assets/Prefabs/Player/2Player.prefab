@@ -148,8 +148,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f2bc430e7b3d794da9185b701351400, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 0}
-  coll: {fileID: 0}
+  rb: {fileID: 2809243169640852225}
+  coll: {fileID: 2809243169640852230}
   delayBeforeDoubleJump: 0
   jumpableGround:
     serializedVersion: 2
