@@ -18,6 +18,7 @@ public class UIGame : UIScreenBase
     public Text txtDiamond;
     public Text txtCurrentTime;
     public Text txtHealth;
+    public Joystick joyStick;
 
     private void Start()
     {
@@ -129,27 +130,6 @@ public class UIGame : UIScreenBase
     public void OnButtonJumpClick()
     {
         GameController.ins.PlayerJump();
-    }
-
-    public void PointDownLeftButton()
-    {
-        GameController.ins.moveLeft = true;
-    }
-
-    public void PointUpLeftButton()
-    {
-        GameController.ins.moveLeft = false;
-    }
-
-    public void PointDownRightButton()
-    {
-        GameController.ins.moveRight = true;
-    }
-
-    public void PointUpRightButton()
-    {
-        GameController.ins.moveRight = false;
-
     }
 
     public void Continue()

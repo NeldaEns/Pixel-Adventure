@@ -14,7 +14,7 @@ public class PlayerMovement : MonoBehaviour
     public float delayBeforeDoubleJump;
 
     [SerializeField] private LayerMask jumpableGround;
-    [SerializeField] private float moveSpeed = 7f;
+    [SerializeField] private float moveSpeed = 2.5f;
     [SerializeField] private float jumpForce = 14f;
     [SerializeField] private float fanForce = 26f;
 
@@ -38,14 +38,26 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-         MovePlayer();
+        if(((UIGame)UIController.ins.currentScreen).joyStick.Horizontal >= .2f)
+        {
+            dirX = moveSpeed;
+        }
+        else if(((UIGame)UIController.ins.currentScreen).joyStick.Horizontal <= -.2f)
+        {
+            dirX = -moveSpeed;
+        }
+        else
+        {
+            dirX = 0f;
+        }
         UpdateAnimationState();
     }
 
     private void FixedUpdate()
     {
-        rb.velocity = new Vector2(dirX, rb.velocity.y);
+        rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
     }
+
     public void UpdateAnimationState()
     {
         MovementState state;
@@ -75,11 +87,6 @@ public class PlayerMovement : MonoBehaviour
         }
 
         anim.SetInteger("state", (int)state);
-    }
-
-    private bool IsGround()
-    {
-        return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector3.down, .1f, jumpableGround);
     }
 
     public void OnCollisionEnter2D(Collision2D collision)
@@ -209,21 +216,5 @@ public class PlayerMovement : MonoBehaviour
         GameController.ins.doubleJump = true;
     }
 
-    void MovePlayer()
-    {
-        if(GameController.ins.moveLeft)
-        {
-            dirX = -moveSpeed;
-        }
 
-        else if(GameController.ins.moveRight)
-        {
-            dirX = moveSpeed;
-        }
-
-        else
-        {
-            dirX = 0;
-        }
-    }
 }

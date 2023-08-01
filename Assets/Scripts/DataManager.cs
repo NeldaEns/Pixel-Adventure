@@ -245,4 +245,5 @@ public class DataManager : MonoBehaviour
     {
         PlayerPrefs.SetFloat(music_slider_value, musicSliderValue);
     }
+
 }

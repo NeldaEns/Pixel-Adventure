@@ -154,7 +154,7 @@ MonoBehaviour:
   jumpableGround:
     serializedVersion: 2
     m_Bits: 256
-  moveSpeed: 7
+  moveSpeed: 3.2
   jumpForce: 14
   fanForce: 26
   currentAnim: 0
