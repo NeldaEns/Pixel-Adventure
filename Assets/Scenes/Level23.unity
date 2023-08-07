@@ -121695,6 +121695,7 @@ MonoBehaviour:
   - {fileID: 2809243169640852226, guid: a7038207602808c4ba15c1bb22b82473, type: 3}
   - {fileID: 2809243169640852226, guid: 5e1b9f526e122004cad432a0f9137aaa, type: 3}
   - {fileID: 2809243169640852226, guid: 4c197c413c8dc664bbfa0c7cfd7defbd, type: 3}
+  player1: {fileID: 0}
 --- !u!4 &1520512035
 Transform:
   m_ObjectHideFlags: 0
@@ -122131,7 +122132,7 @@ PrefabInstance:
     - target: {fileID: 6695102527063306720, guid: 7ca0e2783206bbe489f0b79e8a6cd21f,
         type: 3}
       propertyPath: levelToUnlock
-      value: 12
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 6695102527063306722, guid: 7ca0e2783206bbe489f0b79e8a6cd21f,
         type: 3}

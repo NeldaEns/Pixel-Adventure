@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
 
     private float dirX;
     public float delayBeforeDoubleJump;
+    private int trapCollisionCount = 0; 
 
     [SerializeField] private LayerMask jumpableGround;
     [SerializeField] private float moveSpeed = 2.5f;
@@ -97,7 +98,14 @@ public class PlayerMovement : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("Trap"))
         {
+            trapCollisionCount++;
             DataManager.ins.health--;
+            if(trapCollisionCount >= 2)
+            {
+                AudioManager.ins.PlaySFX("death");
+                GameController.ins.isGameOver = true;
+                Die();
+            }
             if (DataManager.ins.health <= 0)
             {
                 AudioManager.ins.PlaySFX("death");
@@ -109,11 +117,18 @@ public class PlayerMovement : MonoBehaviour
                 StartCoroutine(GetHurt());
             }
         }
-
         if(collision.gameObject.tag == "Ground")
         {
             GameController.ins.isGrounded = true;
             GameController.ins.doubleJump = false;
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if(collision.gameObject.CompareTag("Trap"))
+        {
+            trapCollisionCount--;
         }
     }
 
@@ -179,6 +194,13 @@ public class PlayerMovement : MonoBehaviour
     {
         rb.bodyType = RigidbodyType2D.Dynamic;
         anim.SetTrigger("death");
+        StartCoroutine(DisableBodyType());
+    }
+
+    IEnumerator DisableBodyType()
+    {
+        yield return new WaitForSeconds(1.5f);
+        rb.bodyType = RigidbodyType2D.Kinematic;
     }
 
     public void RestartLevel()
@@ -189,9 +211,9 @@ public class PlayerMovement : MonoBehaviour
 
     IEnumerator GetHurt()
     {
-        Physics2D.IgnoreLayerCollision(6, 7);
+        //Physics2D.IgnoreLayerCollision(6, 7);
         GetComponent<Animator>().SetLayerWeight(1, 1);
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(0.5f);
         GetComponent<Animator>().SetLayerWeight(1, 0);
         Physics2D.IgnoreLayerCollision(6, 7, false);
     }
@@ -205,7 +227,7 @@ public class PlayerMovement : MonoBehaviour
            Invoke("EnableDoubleJump", delayBeforeDoubleJump);
         }
         if (GameController.ins.doubleJump)
-        {
+        {           
             rb.velocity = Vector2.up * jumpForce;
             GameController.ins.doubleJump = false;
         }
@@ -215,6 +237,4 @@ public class PlayerMovement : MonoBehaviour
     {
         GameController.ins.doubleJump = true;
     }
-
-
 }

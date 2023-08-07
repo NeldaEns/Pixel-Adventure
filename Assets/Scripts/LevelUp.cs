@@ -34,7 +34,8 @@ public class LevelUp : UIScreenBase
         DataManager.ins.DataGame();
         DataManager.ins.timeActive = true;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        UIController.ins.ShowUIGame();   
+        UIController.ins.ShowUIGame();
+        ((UIGame)UIController.ins.currentScreen).tetx.SetActive(false);
     }
 
     public void Menu()

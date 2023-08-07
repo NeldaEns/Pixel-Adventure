@@ -2278,9 +2278,9 @@ Transform:
   - {fileID: 675420849}
   - {fileID: 720733478}
   - {fileID: 553236986}
-  - {fileID: 980578530}
   - {fileID: 144964894}
   - {fileID: 1792986566}
+  - {fileID: 980578530}
   - {fileID: 1959217427}
   - {fileID: 1187815555}
   - {fileID: 1459146605}
@@ -6985,8 +6985,8 @@ Transform:
   - {fileID: 1067799467}
   - {fileID: 54310192}
   - {fileID: 2034322725}
-  - {fileID: 3229422}
   - {fileID: 1432753910}
+  - {fileID: 3229422}
   - {fileID: 1906267672}
   m_Father: {fileID: 1237465951}
   m_RootOrder: 5
@@ -81299,7 +81299,7 @@ PrefabInstance:
     - target: {fileID: 6695102527063306720, guid: 7ca0e2783206bbe489f0b79e8a6cd21f,
         type: 3}
       propertyPath: levelToUnlock
-      value: 12
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 6695102527063306722, guid: 7ca0e2783206bbe489f0b79e8a6cd21f,
         type: 3}
@@ -85656,8 +85656,8 @@ Transform:
   - {fileID: 1736767916}
   - {fileID: 2025406466}
   - {fileID: 1789874529}
-  - {fileID: 526430797}
   - {fileID: 1637993734}
+  - {fileID: 526430797}
   - {fileID: 459574750}
   - {fileID: 1820888904}
   - {fileID: 860498594}

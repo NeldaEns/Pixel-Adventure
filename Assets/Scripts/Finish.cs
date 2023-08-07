@@ -17,7 +17,7 @@ public class Finish : MonoBehaviour
                 && GameController.ins.orange.Length == 0 && GameController.ins.melon.Length == 0 && GameController.ins.pineapple.Length == 0 && GameController.ins.strawberry.Length == 0)
             {
                 DataManager.ins.LoadLevelsUnlocked();
-                if (DataManager.ins.numberofUnlockedLevels == levelToUnlock - 1)
+                if (DataManager.ins.numberofUnlockedLevels <= levelToUnlock)
                 {
                     DataManager.ins.SaveLevelsUnlocked();
                 }

@@ -19,6 +19,7 @@ public class UIGame : UIScreenBase
     public Text txtCurrentTime;
     public Text txtHealth;
     public Joystick joyStick;
+    public GameObject tetx;
 
     private void Start()
     {

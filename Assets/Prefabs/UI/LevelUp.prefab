@@ -444,14 +444,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b9aeb0bb09bcf14ba3e35522f8e30ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  txtApple: {fileID: 0}
-  txtBanana: {fileID: 0}
-  txtCherries: {fileID: 0}
-  txtKiwi: {fileID: 0}
-  txtMelon: {fileID: 0}
-  txtOrange: {fileID: 0}
-  txtPineapple: {fileID: 0}
-  txtStrawberry: {fileID: 0}
   txtDiamond: {fileID: 4542799485016134802}
   timeText: {fileID: 6574551563966454800}
 --- !u!1 &3813961117183083858
@@ -686,9 +678,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Level
-
-    Complete!'
+  m_Text: Next Level!
 --- !u!1 &5632231089391117135
 GameObject:
   m_ObjectHideFlags: 0
