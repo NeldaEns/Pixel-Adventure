@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System;
+using DG.Tweening;
 
 public class UIGame : UIScreenBase
 {
@@ -20,9 +21,17 @@ public class UIGame : UIScreenBase
     public Text txtHealth;
     public Joystick joyStick;
     public GameObject tetx;
+    public Tween tetx1;
+    [SerializeField] public Slider musicSlider, sfxSlider;
 
     private void Start()
     {
+        sfxSlider.value = DataManager.ins.sfxSliderValue;
+        DataManager.ins.sfxVolume = sfxSlider.value;
+        AudioManager.ins.SFXVolume(sfxSlider.value);
+        musicSlider.value = DataManager.ins.musicSliderValue;
+        DataManager.ins.musicVolume = musicSlider.value;
+        AudioManager.ins.MusicVolume(musicSlider.value);
         UpdateAppleText();
         UpdateBananaText();
         UpdateCherriesText();
@@ -34,10 +43,17 @@ public class UIGame : UIScreenBase
         UpdateDiamondText();
         UpdateTimeText();
         UpdateHeart();
+        
     }
 
     public void Update()
     {
+        sfxSlider.value = DataManager.ins.sfxSliderValue;
+        DataManager.ins.sfxVolume = sfxSlider.value;
+        AudioManager.ins.SFXVolume(sfxSlider.value);
+        musicSlider.value = DataManager.ins.musicSliderValue;
+        DataManager.ins.musicVolume = musicSlider.value;
+        AudioManager.ins.MusicVolume(musicSlider.value);
         UpdateAppleText();
         UpdateBananaText();
         UpdateCherriesText();
@@ -151,5 +167,22 @@ public class UIGame : UIScreenBase
         DataManager.ins.timeActive = false;
         SceneManager.LoadScene(0);
         UIController.ins.ShowMenu();
+    }
+    public void MusicVolume()
+    {
+        DataManager.ins.musicVolume = musicSlider.value;
+        DataManager.ins.SaveMusicVolume();
+        DataManager.ins.musicSliderValue = musicSlider.value;
+        DataManager.ins.SaveMusicSliderValue();
+        AudioManager.ins.MusicVolume(musicSlider.value);
+    }
+
+    public void SFXVolume()
+    {
+        DataManager.ins.sfxVolume = sfxSlider.value;
+        DataManager.ins.SaveSFXVolume();
+        DataManager.ins.sfxSliderValue = sfxSlider.value;
+        DataManager.ins.SaveSFXSliderValue();
+        AudioManager.ins.SFXVolume(sfxSlider.value);
     }
 }

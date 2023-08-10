@@ -86,7 +86,6 @@ public class PlayerMovement : MonoBehaviour
         {
             state = MovementState.falling;
         }
-
         anim.SetInteger("state", (int)state);
     }
 
@@ -103,13 +102,11 @@ public class PlayerMovement : MonoBehaviour
             if(trapCollisionCount >= 2)
             {
                 AudioManager.ins.PlaySFX("death");
-                GameController.ins.isGameOver = true;
                 Die();
             }
             if (DataManager.ins.health <= 0)
             {
                 AudioManager.ins.PlaySFX("death");
-                GameController.ins.isGameOver = true;
                 Die();
             }
             else

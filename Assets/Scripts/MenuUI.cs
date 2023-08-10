@@ -15,6 +15,17 @@ public class MenuUI : UIScreenBase
 
     private void Start()
     {
+
+        sfxSlider.value = DataManager.ins.sfxSliderValue;
+        DataManager.ins.sfxVolume = sfxSlider.value;
+        AudioManager.ins.SFXVolume(sfxSlider.value);
+        musicSlider.value = DataManager.ins.musicSliderValue;
+        DataManager.ins.musicVolume = musicSlider.value;
+        AudioManager.ins.MusicVolume(musicSlider.value);
+        UpdateDiamondText();
+    }
+    private void Update()
+    {
         UpdateDiamondText();
         sfxSlider.value = DataManager.ins.sfxSliderValue;
         DataManager.ins.sfxVolume = sfxSlider.value;
@@ -22,10 +33,6 @@ public class MenuUI : UIScreenBase
         musicSlider.value = DataManager.ins.musicSliderValue;
         DataManager.ins.musicVolume = musicSlider.value;
         AudioManager.ins.MusicVolume(musicSlider.value);
-    }
-    private void Update()
-    {
-        UpdateDiamondText();
     }
     public void OpenLv()
     {

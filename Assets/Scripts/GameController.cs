@@ -22,8 +22,6 @@ public class GameController : MonoBehaviour
     public bool addApple, addBanana, addCherries, addKiwi, addMelon, addOrange, addPineapple, addStrawberry, addDiamond;
     public bool levelComple;
     public bool gamePlay;
-    public bool moveLeft;
-    public bool moveRight;
     public bool isGrounded;
     public bool doubleJump;
     public bool isGameOver;
@@ -92,12 +90,11 @@ public class GameController : MonoBehaviour
     {
         if (levelComple)
         {
-            moveLeft = false;
-            moveRight = false;
             ManagerAds.Ins.ShowInterstitial();
             DataManager.ins.timeActive = false;
             if (apple.Length > 0 || banana.Length > 0 || cherries.Length > 0 || orange.Length > 0 || melon.Length > 0 || strawberry.Length > 0 || pineapple.Length > 0 || kiwi.Length > 0)
             {
+                isGameOver = true;
                 UIController.ins.ShowGameOver();
                 ((GameOverScreen)UIController.ins.currentScreen).UpdateAppleText();
                 ((GameOverScreen)UIController.ins.currentScreen).UpdateBananaText();
@@ -113,16 +110,14 @@ public class GameController : MonoBehaviour
             }
             else if (apple.Length == 0 && banana.Length == 0 && cherries.Length == 0 && kiwi.Length == 0 && orange.Length == 0 && melon.Length == 0 && pineapple.Length == 0 && strawberry.Length == 0)
             {
-                UIController.ins.ShowLevelUp();
-                ((LevelUp)UIController.ins.currentScreen).UpdateDiamondText();
-                ((LevelUp)UIController.ins.currentScreen).TimeFinal();
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                DataManager.ins.timeActive = true;
                 levelComple = false;
             }
         }
         if (DataManager.ins.currentTime <= 0)
         {
-            moveLeft = false;
-            moveRight = false;
+            isGameOver = true;
             ManagerAds.Ins.ShowInterstitial();
             AudioManager.ins.PlaySFX("gameover");
             DataManager.ins.timeActive = false;
@@ -240,7 +235,7 @@ public class GameController : MonoBehaviour
 
     public void PlayerJump()
     {
-        player1.JumpButton();     
+       player1.JumpButton();     
     }
 
 }
