@@ -1116,6 +1116,8 @@ MonoBehaviour:
   txtHealth: {fileID: 1241345144357518785}
   joyStick: {fileID: 3218610913785897300}
   tetx: {fileID: 4743691972293414799}
+  tetx1: {fileID: 5753925042101601740}
+  ease: 31
   musicSlider: {fileID: 4102592539470541668}
   sfxSlider: {fileID: 460542009070226469}
 --- !u!1 &3256688225412912334

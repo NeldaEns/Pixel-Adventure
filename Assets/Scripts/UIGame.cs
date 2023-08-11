@@ -21,7 +21,6 @@ public class UIGame : UIScreenBase
     public Text txtHealth;
     public Joystick joyStick;
     public GameObject tetx;
-    public Tween tetx1;
     [SerializeField] public Slider musicSlider, sfxSlider;
 
     private void Start()
@@ -43,7 +42,6 @@ public class UIGame : UIScreenBase
         UpdateDiamondText();
         UpdateTimeText();
         UpdateHeart();
-        
     }
 
     public void Update()
