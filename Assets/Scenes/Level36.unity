@@ -18443,7 +18443,7 @@ GameObject:
   - component: {fileID: 791258783}
   - component: {fileID: 791258782}
   - component: {fileID: 791258785}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Terrain
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -118642,8 +118642,6 @@ MonoBehaviour:
   addDiamond: 0
   levelComple: 0
   gamePlay: 0
-  moveLeft: 0
-  moveRight: 0
   isGrounded: 0
   doubleJump: 0
   isGameOver: 0
@@ -118652,6 +118650,7 @@ MonoBehaviour:
   - {fileID: 2809243169640852226, guid: a7038207602808c4ba15c1bb22b82473, type: 3}
   - {fileID: 2809243169640852226, guid: 5e1b9f526e122004cad432a0f9137aaa, type: 3}
   - {fileID: 2809243169640852226, guid: 4c197c413c8dc664bbfa0c7cfd7defbd, type: 3}
+  player1: {fileID: 0}
 --- !u!4 &1520512035
 Transform:
   m_ObjectHideFlags: 0

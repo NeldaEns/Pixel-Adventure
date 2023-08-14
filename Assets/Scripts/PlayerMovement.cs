@@ -97,6 +97,7 @@ public class PlayerMovement : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("Trap"))
         {
+            AudioManager.ins.PlaySFX("click");
             trapCollisionCount++;
             DataManager.ins.health--;
             if(trapCollisionCount >= 2)
@@ -212,7 +213,6 @@ public class PlayerMovement : MonoBehaviour
         GetComponent<Animator>().SetLayerWeight(1, 1);
         yield return new WaitForSeconds(0.5f);
         GetComponent<Animator>().SetLayerWeight(1, 0);
-        Physics2D.IgnoreLayerCollision(6, 7, false);
     }
 
     public void JumpButton()

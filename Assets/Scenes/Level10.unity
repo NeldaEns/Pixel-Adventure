@@ -4252,7 +4252,7 @@ GameObject:
   - component: {fileID: 791258783}
   - component: {fileID: 791258782}
   - component: {fileID: 791258785}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Terrain
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -13606,10 +13606,10 @@ Transform:
   - {fileID: 1887195189}
   - {fileID: 1837615981}
   - {fileID: 1875768267}
-  - {fileID: 1141699633}
-  - {fileID: 1332375670}
   - {fileID: 1689584571}
+  - {fileID: 1141699633}
   - {fileID: 1755269525}
+  - {fileID: 1332375670}
   m_Father: {fileID: 1237465951}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -14340,10 +14340,10 @@ Transform:
   - {fileID: 612533155}
   - {fileID: 358075256}
   - {fileID: 1679680685}
-  - {fileID: 540658227}
   - {fileID: 550643410}
-  - {fileID: 1916236629}
+  - {fileID: 540658227}
   - {fileID: 419664906}
+  - {fileID: 1916236629}
   - {fileID: 1543428473}
   m_Father: {fileID: 1237465951}
   m_RootOrder: 5

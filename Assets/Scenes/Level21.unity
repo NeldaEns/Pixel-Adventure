@@ -3335,8 +3335,6 @@ MonoBehaviour:
   addDiamond: 0
   levelComple: 0
   gamePlay: 0
-  moveLeft: 0
-  moveRight: 0
   isGrounded: 0
   doubleJump: 0
   isGameOver: 0
@@ -6986,7 +6984,7 @@ GameObject:
   - component: {fileID: 791258783}
   - component: {fileID: 791258782}
   - component: {fileID: 791258785}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Terrain
   m_TagString: Ground
   m_Icon: {fileID: 0}
