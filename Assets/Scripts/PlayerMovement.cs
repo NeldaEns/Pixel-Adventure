@@ -19,6 +19,11 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float jumpForce = 14f;
     [SerializeField] private float fanForce = 26f;
 
+    public Transform wallCheck;
+    bool isWallTouch;
+    bool isSliding;
+    public float wallSlidingSpeed;
+
     public enum MovementState
     {
         idle,
@@ -51,12 +56,27 @@ public class PlayerMovement : MonoBehaviour
         {
             dirX = 0f;
         }
+        isWallTouch = Physics2D.OverlapBox(wallCheck.position, new Vector2(.09f, 1.5f), 0);
+        if(isWallTouch && !GameController.ins.isGrounded && dirX != 0)
+        {
+            isSliding = true;
+        }
+        else
+        {
+            isSliding = false;
+        }
         UpdateAnimationState();
     }
 
     private void FixedUpdate()
     {
         rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
+
+        if(isSliding)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, Mathf.Clamp(rb.velocity.y, -wallSlidingSpeed, float.MaxValue));
+        }
+
     }
 
     public void UpdateAnimationState()
@@ -223,6 +243,7 @@ public class PlayerMovement : MonoBehaviour
            rb.velocity = Vector2.up * jumpForce;
            Invoke("EnableDoubleJump", delayBeforeDoubleJump);
         }
+
         if (GameController.ins.doubleJump)
         {           
             rb.velocity = Vector2.up * jumpForce;

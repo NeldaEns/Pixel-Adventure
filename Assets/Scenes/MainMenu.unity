@@ -516,7 +516,7 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 1920, y: 1080}
+  m_ReferenceResolution: {x: 2400, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0.5
   m_PhysicalUnit: 3
@@ -586,8 +586,6 @@ MonoBehaviour:
   bg: {fileID: 41870902}
   mainCamera: {fileID: 86470627}
   gameOverPanel: {fileID: 2876189329582669902, guid: 022004bc47038ba4da92cbb7a6f74989,
-    type: 3}
-  levelComplete: {fileID: 2876189329582669902, guid: b48dfdc5642de364fa5779adb8c98517,
     type: 3}
 --- !u!1001 &1063680669
 PrefabInstance:

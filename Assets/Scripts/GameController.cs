@@ -42,6 +42,7 @@ public class GameController : MonoBehaviour
         }
         DataManager.ins.LoadSelectedCharacter();
         GameObject player = Instantiate(playerPrefabs[DataManager.ins.selectedCharacter], startPoint.transform.position, Quaternion.identity);
+
         SpawnNv();
         isGameOver = false;
     }
@@ -111,6 +112,7 @@ public class GameController : MonoBehaviour
             else if (apple.Length == 0 && banana.Length == 0 && cherries.Length == 0 && kiwi.Length == 0 && orange.Length == 0 && melon.Length == 0 && pineapple.Length == 0 && strawberry.Length == 0)
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                ((UIGame)UIController.ins.currentScreen).joyStick.ResetValue();
                 DataManager.ins.timeActive = true;
                 levelComple = false;
             }
@@ -235,7 +237,7 @@ public class GameController : MonoBehaviour
 
     public void PlayerJump()
     {
-       player1.JumpButton();     
+       player1.JumpButton(); 
     }
 
 }
