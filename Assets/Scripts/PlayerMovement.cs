@@ -56,7 +56,7 @@ public class PlayerMovement : MonoBehaviour
         {
             dirX = 0f;
         }
-        isWallTouch = Physics2D.OverlapBox(wallCheck.position, new Vector2(.09f, 1.5f), 0);
+        isWallTouch = Physics2D.OverlapBox(wallCheck.position, new Vector2(.05f, 1.5f), 0, jumpableGround);
         if(isWallTouch && !GameController.ins.isGrounded && dirX != 0)
         {
             isSliding = true;
@@ -125,7 +125,7 @@ public class PlayerMovement : MonoBehaviour
                 AudioManager.ins.PlaySFX("death");
                 Die();
             }
-            if (DataManager.ins.health <= 0)
+            if (DataManager.ins.health == 0)
             {
                 AudioManager.ins.PlaySFX("death");
                 Die();
@@ -224,12 +224,12 @@ public class PlayerMovement : MonoBehaviour
     public void RestartLevel()
     {
         DataManager.ins.DataGame();
+        ((UIGame)UIController.ins.currentScreen).joyStick.ResetValue();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     IEnumerator GetHurt()
     {
-        //Physics2D.IgnoreLayerCollision(6, 7);
         GetComponent<Animator>().SetLayerWeight(1, 1);
         yield return new WaitForSeconds(0.5f);
         GetComponent<Animator>().SetLayerWeight(1, 0);

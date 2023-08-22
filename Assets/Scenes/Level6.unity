@@ -5866,6 +5866,7 @@ GameObject:
   - component: {fileID: 854954063}
   - component: {fileID: 854954062}
   - component: {fileID: 854954061}
+  - component: {fileID: 854954064}
   m_Layer: 0
   m_Name: Terrain Platform
   m_TagString: Ground
@@ -5899,7 +5900,7 @@ BoxCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 7.802209, y: 0.9911525}
   m_SpriteTilingProperty:
@@ -5925,7 +5926,7 @@ BoxCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 2.8006675, y: 1.0029542}
   m_SpriteTilingProperty:
@@ -5951,7 +5952,7 @@ BoxCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 0.31302786, y: 0}
   m_SpriteTilingProperty:
@@ -5966,6 +5967,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.9368906, y: 1}
   m_EdgeRadius: 0
+--- !u!251 &854954064
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 854954059}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 0
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 180
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!4 &866110061 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6297654770224451233, guid: 66a404529c516ca4499a9ad188af5c43,

@@ -11,6 +11,8 @@ public class CharacterSelect : UIScreenBase
     public Button unlockButton;
     public Text diamondTxt;
 
+    public Button selectBtn, selectedBtn;
+
     private void Awake()
     {
         DataManager.ins.LoadSelectedCharacter();
@@ -19,18 +21,26 @@ public class CharacterSelect : UIScreenBase
             player.SetActive(false);
         }
             skins[DataManager.ins.selectedCharacter].SetActive(true);
-
         foreach (Character c in characters)
         {
             if (c.price == 0)
             {
                 c.isUnlocked = true;
+
             }
             else
             {
                 c.isUnlocked = PlayerPrefs.GetInt(c.name, 0) == 0 ? false : true;
             }
         }
+
+        //if (DataManager.ins.isSelected)
+        //{
+        //    selectedBtn.gameObject.SetActive(true);
+        //    selectedBtn.interactable = false;
+        //    selectBtn.gameObject.SetActive(false);
+        //}
+
         UpdateUI();
     }
 
@@ -57,10 +67,10 @@ public class CharacterSelect : UIScreenBase
             DataManager.ins.selectedCharacter = 0;
         }
         skins[DataManager.ins.selectedCharacter].SetActive(true);
-        if(characters[DataManager.ins.selectedCharacter].isUnlocked)
-        {
-        DataManager.ins.SaveSelectedCharacter();
-        }
+        //if(characters[DataManager.ins.selectedCharacter].isUnlocked)
+        //{
+        //DataManager.ins.SaveSelectedCharacter();
+        //}
         UpdateUI();
     }
 
@@ -73,10 +83,10 @@ public class CharacterSelect : UIScreenBase
             DataManager.ins.selectedCharacter = skins.Length - 1;
         }
         skins[DataManager.ins.selectedCharacter].SetActive(true);
-        if (characters[DataManager.ins.selectedCharacter].isUnlocked)
-        {
-        DataManager.ins.SaveSelectedCharacter();
-        }
+        //if (characters[DataManager.ins.selectedCharacter].isUnlocked)
+        //{
+        //DataManager.ins.SaveSelectedCharacter();
+        //}
         UpdateUI();
     }
 
@@ -100,6 +110,21 @@ public class CharacterSelect : UIScreenBase
                 unlockButton.interactable = true;   
             }
         }
+        if(characters[0].isUnlocked == true)
+        {
+            selectedBtn.gameObject.SetActive(false);
+            selectedBtn.gameObject.SetActive(true);
+            selectedBtn.interactable = false;
+        }
+        if (characters[DataManager.ins.selectedCharacter].isUnlocked == false)
+        {
+            selectedBtn.gameObject.SetActive(false);
+        }
+        //else if(characters[DataManager.ins.selectedCharacter].isUnlocked == true)
+        //{
+        //    selectBtn.gameObject.SetActive(true);
+        //    selectedBtn.gameObject.SetActive(false);
+        //}
     }
 
     public void Unlocked()
@@ -110,7 +135,21 @@ public class CharacterSelect : UIScreenBase
         PlayerPrefs.SetInt(characters[DataManager.ins.selectedCharacter].name, 1);
         DataManager.ins.SaveSelectedCharacter();
         characters[DataManager.ins.selectedCharacter].isUnlocked = true;
+        if(characters[DataManager.ins.selectedCharacter].isUnlocked == true)
+        {
+            selectBtn.gameObject.SetActive(true);
+            selectedBtn.gameObject.SetActive(false);
+        }
         UpdateUI();
+    }
+
+    public void SelectCharacter()
+    {
+        DataManager.ins.isSelected = true;
+        selectBtn.gameObject.SetActive(false);
+        selectedBtn.gameObject.SetActive(true);
+        selectedBtn.interactable = false;
+        DataManager.ins.SaveSelectedCharacter();
     }
 
     public override void OnShow()

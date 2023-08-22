@@ -45,6 +45,7 @@ public class DataManager : MonoBehaviour
     private const string sfx_slider_value = "sfx_slider_value";
 
     public bool timeActive = false;
+    public bool isSelected = false;
 
     private void Awake()
     {
@@ -97,7 +98,7 @@ public class DataManager : MonoBehaviour
     {
         musicVolume = 1f;
         sfxVolume = 1f;
-        diamond = 799;
+        diamond = 10000;
         currentTime = maxTime;
         SaveDiamond();
         SaveMusicVolume();

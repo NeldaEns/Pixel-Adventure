@@ -17636,7 +17636,7 @@ CompositeCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_GeometryType: 0
@@ -22972,13 +22972,13 @@ Transform:
   - {fileID: 119617800}
   - {fileID: 1757791216}
   - {fileID: 1462393022}
-  - {fileID: 274053569}
   - {fileID: 315233712}
   - {fileID: 1963373910}
   - {fileID: 709171974}
   - {fileID: 780545883}
   - {fileID: 734881189}
   - {fileID: 1187658673}
+  - {fileID: 274053569}
   - {fileID: 229783861}
   - {fileID: 1663220638}
   - {fileID: 601839919}
@@ -59010,6 +59010,7 @@ GameObject:
   - component: {fileID: 1405847178}
   - component: {fileID: 1405847177}
   - component: {fileID: 1405847176}
+  - component: {fileID: 1405847190}
   m_Layer: 0
   m_Name: Terrain Platform
   m_TagString: Ground
@@ -59043,7 +59044,7 @@ BoxCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 49.445152, y: 9.923729}
   m_SpriteTilingProperty:
@@ -59069,7 +59070,7 @@ BoxCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 65.51049, y: 9.88903}
   m_SpriteTilingProperty:
@@ -59095,7 +59096,7 @@ BoxCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 33.99167, y: 9.872841}
   m_SpriteTilingProperty:
@@ -59121,7 +59122,7 @@ BoxCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 17.897562, y: 9.962858}
   m_SpriteTilingProperty:
@@ -59147,7 +59148,7 @@ BoxCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: -8.36083, y: 16.421116}
   m_SpriteTilingProperty:
@@ -59173,7 +59174,7 @@ BoxCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: -3.6339564, y: 16.448437}
   m_SpriteTilingProperty:
@@ -59199,7 +59200,7 @@ BoxCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: -13.142355, y: 11.1477785}
   m_SpriteTilingProperty:
@@ -59225,7 +59226,7 @@ BoxCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: -1.8306408, y: 9.918245}
   m_SpriteTilingProperty:
@@ -59251,7 +59252,7 @@ BoxCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 69.77255, y: 0.6444552}
   m_SpriteTilingProperty:
@@ -59277,7 +59278,7 @@ BoxCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 51.89308, y: 0.64773285}
   m_SpriteTilingProperty:
@@ -59303,7 +59304,7 @@ BoxCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 36.974556, y: 0.6542728}
   m_SpriteTilingProperty:
@@ -59329,7 +59330,7 @@ BoxCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 23.832508, y: 1.7447957}
   m_SpriteTilingProperty:
@@ -59355,7 +59356,7 @@ BoxCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 9.539231, y: 0.63082016}
   m_SpriteTilingProperty:
@@ -59381,7 +59382,7 @@ BoxCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: -5.385097, y: 0.6683762}
   m_SpriteTilingProperty:
@@ -59396,6 +59397,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.428855, y: 3.1922765}
   m_EdgeRadius: 0
+--- !u!251 &1405847190
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1405847174}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 0
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 180
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1001 &1407043713
 PrefabInstance:
   m_ObjectHideFlags: 0
