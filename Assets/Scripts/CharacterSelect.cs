@@ -26,20 +26,14 @@ public class CharacterSelect : UIScreenBase
             if (c.price == 0)
             {
                 c.isUnlocked = true;
-
+                DataManager.ins.isSelected = true;
+                DataManager.ins.selectedCharacterIndex = DataManager.ins.selectedCharacter;
             }
             else
             {
                 c.isUnlocked = PlayerPrefs.GetInt(c.name, 0) == 0 ? false : true;
             }
         }
-
-        //if (DataManager.ins.isSelected)
-        //{
-        //    selectedBtn.gameObject.SetActive(true);
-        //    selectedBtn.interactable = false;
-        //    selectBtn.gameObject.SetActive(false);
-        //}
 
         UpdateUI();
     }
@@ -67,10 +61,6 @@ public class CharacterSelect : UIScreenBase
             DataManager.ins.selectedCharacter = 0;
         }
         skins[DataManager.ins.selectedCharacter].SetActive(true);
-        //if(characters[DataManager.ins.selectedCharacter].isUnlocked)
-        //{
-        //DataManager.ins.SaveSelectedCharacter();
-        //}
         UpdateUI();
     }
 
@@ -83,18 +73,25 @@ public class CharacterSelect : UIScreenBase
             DataManager.ins.selectedCharacter = skins.Length - 1;
         }
         skins[DataManager.ins.selectedCharacter].SetActive(true);
-        //if (characters[DataManager.ins.selectedCharacter].isUnlocked)
-        //{
-        //DataManager.ins.SaveSelectedCharacter();
-        //}
         UpdateUI();
     }
 
     public void UpdateUI()
     {
-        if(characters[DataManager.ins.selectedCharacter].isUnlocked == true)
+        if(characters[DataManager.ins.selectedCharacter].isUnlocked)
         {
             unlockButton.gameObject.SetActive(false);
+            if (DataManager.ins.isSelected && DataManager.ins.selectedCharacterIndex == DataManager.ins.selectedCharacter)
+            {
+                selectBtn.gameObject.SetActive(false);
+                selectedBtn.gameObject.SetActive(true);
+                selectedBtn.interactable = false;
+            }
+            else
+            {
+                selectBtn.gameObject.SetActive(true);
+                selectedBtn.gameObject.SetActive(false);
+            }
         }
         else
         {
@@ -107,24 +104,11 @@ public class CharacterSelect : UIScreenBase
             else
             {
                 unlockButton.gameObject.SetActive(true);
-                unlockButton.interactable = true;   
+                unlockButton.interactable = true;
             }
-        }
-        if(characters[0].isUnlocked == true)
-        {
-            selectedBtn.gameObject.SetActive(false);
-            selectedBtn.gameObject.SetActive(true);
-            selectedBtn.interactable = false;
-        }
-        if (characters[DataManager.ins.selectedCharacter].isUnlocked == false)
-        {
+            selectBtn.gameObject.SetActive(false);
             selectedBtn.gameObject.SetActive(false);
         }
-        //else if(characters[DataManager.ins.selectedCharacter].isUnlocked == true)
-        //{
-        //    selectBtn.gameObject.SetActive(true);
-        //    selectedBtn.gameObject.SetActive(false);
-        //}
     }
 
     public void Unlocked()
@@ -135,17 +119,15 @@ public class CharacterSelect : UIScreenBase
         PlayerPrefs.SetInt(characters[DataManager.ins.selectedCharacter].name, 1);
         DataManager.ins.SaveSelectedCharacter();
         characters[DataManager.ins.selectedCharacter].isUnlocked = true;
-        if(characters[DataManager.ins.selectedCharacter].isUnlocked == true)
-        {
-            selectBtn.gameObject.SetActive(true);
-            selectedBtn.gameObject.SetActive(false);
-        }
+        selectBtn.gameObject.SetActive(true);
+        selectedBtn.gameObject.SetActive(false);
         UpdateUI();
     }
 
     public void SelectCharacter()
     {
         DataManager.ins.isSelected = true;
+        DataManager.ins.selectedCharacterIndex = DataManager.ins.selectedCharacter;
         selectBtn.gameObject.SetActive(false);
         selectedBtn.gameObject.SetActive(true);
         selectedBtn.interactable = false;

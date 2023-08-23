@@ -18,6 +18,7 @@ public class DataManager : MonoBehaviour
     public int numberofUnlockedLevels;
     public int health ;
     public int selectedCharacter;
+    public int selectedCharacterIndex;
 
     public float musicVolume;
     public float sfxVolume;
