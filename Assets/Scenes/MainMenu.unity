@@ -910,6 +910,7 @@ MonoBehaviour:
   numberofUnlockedLevels: 0
   health: 0
   selectedCharacter: 0
+  selectedCharacterIndex: 0
   musicVolume: 0
   sfxVolume: 0
   currentTime: 0
@@ -917,6 +918,7 @@ MonoBehaviour:
   musicSliderValue: 0
   sfxSliderValue: 0
   timeActive: 0
+  isSelected: 0
 --- !u!4 &2018258036
 Transform:
   m_ObjectHideFlags: 0

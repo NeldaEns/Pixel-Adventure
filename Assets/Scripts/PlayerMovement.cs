@@ -117,6 +117,7 @@ public class PlayerMovement : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("Trap"))
         {
+            rb.velocity = new Vector2(-50f, rb.velocity.y);
             AudioManager.ins.PlaySFX("click");
             trapCollisionCount++;
             DataManager.ins.health--;
@@ -230,7 +231,7 @@ public class PlayerMovement : MonoBehaviour
 
     IEnumerator GetHurt()
     {
-        GetComponent<Animator>().SetLayerWeight(1, 1);
+        GetComponent<Animator>().SetLayerWeight(1, 1);       
         yield return new WaitForSeconds(0.5f);
         GetComponent<Animator>().SetLayerWeight(1, 0);
     }
